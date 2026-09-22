@@ -1,0 +1,128 @@
+:root {
+  --paper: #f4efe4;
+  --ink: #1c1916;
+  --muted: #5c564c;
+  --faint: #8a8378;
+  --rule: #ddd6c8;
+  --cinnabar: #9d1c18;
+  --seal: #f3e4df;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at 12% -10%, rgba(157, 28, 24, 0.08), transparent 42%),
+    linear-gradient(180deg, #f7f3ea 0%, var(--paper) 38%, #efe8da 100%);
+  font-family: "Newsreader", "Noto Serif SC", "Songti SC", serif;
+  font-optical-sizing: auto;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 14px;
+  background: var(--cinnabar);
+}
+
+main {
+  max-width: 38rem;
+  margin: 0 auto;
+  padding: 18vh 2.5rem 12vh 4.5rem;
+}
+
+.kicker {
+  margin: 0 0 1.5rem;
+  color: var(--cinnabar);
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  font-weight: 600;
+  font-size: clamp(4.5rem, 12vw, 7.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+}
+
+.lede {
+  margin: 1.75rem 0 0;
+  max-width: 28rem;
+  color: var(--muted);
+  font-size: 1.35rem;
+  font-weight: 460;
+  line-height: 1.45;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  align-items: center;
+  margin-top: 2.75rem;
+}
+
+.status {
+  flex-basis: 100%;
+  margin: 0;
+  color: var(--faint);
+  font-size: 0.95rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.6rem;
+  padding: 0.35rem 1rem;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  color: var(--ink);
+  background: transparent;
+  font: inherit;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.btn.ink {
+  color: var(--paper);
+  background: var(--ink);
+}
+
+.btn:hover {
+  background: var(--seal);
+  color: var(--cinnabar);
+  border-color: var(--cinnabar);
+}
+
+.btn.ink:hover {
+  color: #fffaf6;
+  background: var(--cinnabar);
+  border-color: var(--cinnabar);
+}
+
+.note {
+  margin: 3.5rem 0 0;
+  max-width: 28rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  color: var(--faint);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.note a {
+  color: var(--ink);
+}

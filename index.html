@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>成声</title>
+    <meta
+      name="description"
+      content="成声是本机有声书校样台。文稿进来，人改校样，按句出声，导出章音频与整书音频。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600&family=Newsreader:ital,opsz,wght@0,6..72,460;0,6..72,560;1,6..72,460&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="site.css" />
+  </head>
+  <body>
+    <main>
+      <p class="kicker">Mac · Apple Silicon</p>
+      <h1>成声</h1>
+      <p class="lede">
+        本机有声书校样台。书稿留在这台电脑上，拆开，改一句，听一句，再导出这一章。
+      </p>
+      <div class="actions" id="actions">
+        <p class="status" id="status">正在看这一版。</p>
+      </div>
+      <p class="note">
+        已安装的成声会自己读
+        <a href="downloads/latest-mac.json">downloads/latest-mac.json</a>
+        ，下好同一目录里的 zip，等人点重启才换上。
+      </p>
+    </main>
+    <script>
+      const status = document.querySelector("#status");
+      const actions = document.querySelector("#actions");
+
+      function link(href, label, primary) {
+        const a = document.createElement("a");
+        a.className = primary ? "btn ink" : "btn";
+        a.href = href;
+        a.textContent = label;
+        return a;
+      }
+
+      fetch("downloads/latest-mac.json")
+        .then((response) => {
+          if (!response.ok) throw new Error("missing");
+          return response.json();
+        })
+        .then((feed) => {
+          const zip = `downloads/${feed.file}`;
+          const dmg = zip.replace(/-arm64\.zip$/, "-arm64.dmg");
+          status.textContent = `当前 ${feed.version}`;
+          actions.append(link(dmg, "下载磁盘映像", true), link(zip, "下载 zip", false));
+        })
+        .catch(() => {
+          status.textContent = "这一版的安装包还没放上来。";
+        });
+    </script>
+  </body>
+</html>
