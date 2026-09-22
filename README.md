@@ -8,7 +8,7 @@ downloads/Chengsheng-<version>-arm64.zip
 downloads/Chengsheng-<version>-arm64.dmg
 ```
 
-应用读取 `https://chengsheng.app/downloads/latest-mac.json`，再在同一目录下载 json 里的 zip。换域名时改成声仓库里的 `SITE_ORIGIN`。
+应用读取 `https://ysheep666.github.io/chengsheng-site/downloads/latest-mac.json`，再在同一目录下载 json 里的 zip。换域名时改成声仓库里的 `SITE_ORIGIN`。
 
 本地预览：
 
