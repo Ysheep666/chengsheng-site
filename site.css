@@ -58,6 +58,14 @@ h1 {
   letter-spacing: -0.04em;
 }
 
+.version {
+  margin: 1.5rem 0 0;
+  color: var(--ink);
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+}
+
 .lede {
   margin: 1.75rem 0 0;
   max-width: 28rem;

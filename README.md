@@ -16,4 +16,4 @@ downloads/Chengsheng-<version>-arm64.dmg
 python3 -m http.server 4173
 ```
 
-稳定版打包后，成声的 `publish.py` 会把 zip、dmg 和 json 复制到这里（旁边有 `../chengsheng-site`，或设置 `CHENGSHENG_SITE_DIR`）。zip 和 dmg 不进 git。
+稳定版在 GitHub 上发布成功后，成声仓库的 `Publish Release to Site` 会把 zip、dmg、json 和首页上的版本推到这个仓库的 `main`。Pages 跟着部署。本机打包时，旁边有这个目录也会先把同样的文件抄进来。
