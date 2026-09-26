@@ -49,7 +49,8 @@
           return response.json();
         })
         .then((feed) => {
-          const zip = `downloads/${feed.file}`;
+          // file 可能是同目录的裸名，也可能是一条绝对链接（包太大，挂 Release 上）。
+          const zip = /^https?:\/\//.test(feed.file) ? feed.file : `downloads/${feed.file}`;
           const dmg = zip.replace(/-arm64\.zip$/, "-arm64.dmg");
           status.textContent = `当前 ${feed.version}`;
           actions.append(link(dmg, "下载磁盘映像", true), link(zip, "下载 zip", false));
