@@ -1,14 +1,10 @@
 # 成声网站
 
-静态页。下载页和自动更新用同一份文件，都在 `downloads/`。
+公开页是 `https://chengsheng.app/`。静态文件在这个仓库的 `main`，GitHub Pages 从这里部署，自定义域名写在 `CNAME`。
 
-```
-downloads/latest-mac.json
-downloads/Chengsheng-<version>-arm64.zip
-downloads/Chengsheng-<version>-arm64.dmg
-```
+下载按钮写在首页上，没有脚本也能点。页面再读 `downloads/latest-mac.json`，核对版本、zip 地址和 sha256 之后才改按钮。对不上就留着页面上写好的那一版。`file` 是绝对 `https://` 链接，或与版本一致的裸文件名 `Chengsheng-<版本>-arm64.zip`。zip 和磁盘映像挂在本仓库的 Release `app-v<版本>` 上，不进 `downloads/`。
 
-应用读取 `https://ysheep666.github.io/chengsheng-site/downloads/latest-mac.json`，再在同一目录下载 json 里的 zip。换域名时改成声仓库里的 `SITE_ORIGIN`。
+已经安装的成声读的是同一份说明。有新的稳定版会自动下载并核对，配置里点「重启安装」才换上。
 
 本地预览：
 
@@ -16,4 +12,11 @@ downloads/Chengsheng-<version>-arm64.dmg
 python3 -m http.server 4173
 ```
 
-稳定版在 GitHub 上发布成功后，成声仓库的 `Publish Release to Site` 会把 zip、dmg、json 和首页上的版本推到这个仓库的 `main`。Pages 跟着部署。本机打包时，旁边有这个目录也会先把同样的文件抄进来。
+稳定版由成声仓库在本机跑 `python3 scripts/pack/publish_site.py --tag vX.Y.Z`。它把安装包传到 Release，并把首页的版本、说明、下载地址和校验写成这一版。候选版不进这个网站。
+
+发布脚本靠这几处标记改首页，改页面时留着：
+
+- 唯一的 `<span data-release>`，不要再加别的属性
+- `<p class="lede" data-release-notes>`，`class` 只有 `lede`
+- 下载用带 `data-download="dmg"` 或 `data-download="zip"` 的链接，`href` 用双引号
+- `<code data-checksum>` 放 zip 的 sha256

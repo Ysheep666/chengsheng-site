@@ -2,62 +2,100 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>成声</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>成声 — 本机有声书校样台</title>
     <meta
       name="description"
-      content="成声是本机有声书校样台。文稿进来，人改校样，按句出声，导出章音频与整书音频。"
+      content="成声是本机有声书校样台。书稿留在这台电脑上，拆开，改一句，听一句，再导出这一章或整本书。"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600&family=Newsreader:ital,opsz,wght@0,6..72,460;0,6..72,560;1,6..72,460&display=swap"
-      rel="stylesheet"
+    <link rel="canonical" href="https://chengsheng.app/" />
+    <meta name="theme-color" content="#f7f4ec" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
     />
-    <link rel="stylesheet" href="site.css" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:title" content="成声" />
+    <meta
+      property="og:description"
+      content="本机有声书校样台。书稿留在这台电脑上，拆开，改一句，听一句，再导出。"
+    />
+    <meta property="og:url" content="https://chengsheng.app/" />
+    <meta property="og:image" content="https://chengsheng.app/icon.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="/icon.png" type="image/png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="/icon.png" />
+    <link rel="stylesheet" href="/site.css" />
   </head>
   <body>
     <main>
-      <p class="kicker">Mac · Apple Silicon</p>
+      <img class="mark" src="/icon.png" width="48" height="48" alt="" />
       <h1>成声</h1>
       <p class="version">当前 <span data-release>0.0.7</span></p>
-      <p class="lede" data-release-notes>本机有声书校样台。切章、拆句可选规则或模型；校样里圈连续几句再拆，或手改分句。安装包自带解释器，打开就能用。</p>
-      <div class="actions" id="actions">
-        <p class="status" id="status">当前 <span data-release>0.0.7</span></p>
-      </div>
-      <p class="note">
-        已安装的成声会自己读
-        <a href="downloads/latest-mac.json">downloads/latest-mac.json</a>
-        ，下好同一目录里的 zip，等人点重启才换上。
+      <p class="lede" data-release-notes>
+        本机有声书校样台。切章、拆句可选规则或模型；校样里圈连续几句再拆，或手改分句。安装包自带解释器，打开就能用。
       </p>
+      <div class="actions">
+        <a
+          class="btn ink"
+          data-download="dmg"
+          href="https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          >下载磁盘映像</a
+        >
+        <a
+          class="btn"
+          data-download="zip"
+          href="https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+          >下载 zip</a
+        >
+        <p class="status" id="status" role="status">这一版可以直接下载。</p>
+      </div>
+
+      <section class="block" aria-labelledby="path-title">
+        <h2 id="path-title">怎么做这本书</h2>
+        <ol class="path">
+          <li>
+            <span class="step">导入</span>
+            <span>把 txt 放进来。书稿、校样和成片都留在这台电脑上。</span>
+          </li>
+          <li>
+            <span class="step">拆书</span>
+            <span>切章、拆句。可以按规则，也可以问文稿模型。</span>
+          </li>
+          <li>
+            <span class="step">校样</span>
+            <span>改一句的词或角色。原文不动，改一句不整章重跑。</span>
+          </li>
+          <li>
+            <span class="step">出声</span>
+            <span>按句合成。没出声、改过或失败的句子可以重跑。</span>
+          </li>
+          <li>
+            <span class="step">导出</span>
+            <span>得到这一章的音频，或一章一文件再加一本整书。</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="block" aria-labelledby="install-title">
+        <h2 id="install-title">安装和更新</h2>
+        <p>
+          打开磁盘映像，把「成声」拖进「应用程序」。下的是 zip 时，解压后再放进去。这一版只提供配备 Apple 芯片的 Mac 安装包。
+        </p>
+        <p>文稿模型和语音模型在成声里配置。密钥只留在本机，不写进书稿。</p>
+        <p>
+          已经安装的成声会读取这份
+          <a href="/downloads/latest-mac.json">更新说明</a>。有新的稳定版会自动下载并核对校验，在配置里点「重启安装」之后才换上。
+        </p>
+        <p class="sum">
+          这一版 zip 的校验。下载之后可以用 <code>shasum -a 256</code> 对一下，结果应与这一串相同。
+          <code data-checksum>e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a</code>
+        </p>
+      </section>
     </main>
-    <script>
-      const status = document.querySelector("#status");
-      const actions = document.querySelector("#actions");
-
-      function link(href, label, primary) {
-        const a = document.createElement("a");
-        a.className = primary ? "btn ink" : "btn";
-        a.href = href;
-        a.textContent = label;
-        return a;
-      }
-
-      fetch("downloads/latest-mac.json")
-        .then((response) => {
-          if (!response.ok) throw new Error("missing");
-          return response.json();
-        })
-        .then((feed) => {
-          // file 可能是同目录的裸名，也可能是一条绝对链接（包太大，挂 Release 上）。
-          const zip = /^https?:\/\//.test(feed.file) ? feed.file : `downloads/${feed.file}`;
-          const dmg = zip.replace(/-arm64\.zip$/, "-arm64.dmg");
-          status.textContent = `当前 ${feed.version}`;
-          actions.append(link(dmg, "下载磁盘映像", true), link(zip, "下载 zip", false));
-        })
-        .catch(() => {
-          status.textContent = "这一版的安装包还没放上来。";
-        });
-    </script>
+    <script src="/site.js"></script>
   </body>
 </html>
