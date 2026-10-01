@@ -1,0 +1,249 @@
+{
+  "testEngine": {
+    "name": "axe-core",
+    "version": "4.13.0"
+  },
+  "violations": [],
+  "incomplete": [],
+  "passes": [
+    {
+      "id": "aria-allowed-attr",
+      "nodes": 15
+    },
+    {
+      "id": "aria-allowed-role",
+      "nodes": 7
+    },
+    {
+      "id": "aria-conditional-attr",
+      "nodes": 15
+    },
+    {
+      "id": "aria-deprecated-role",
+      "nodes": 7
+    },
+    {
+      "id": "aria-hidden-body",
+      "nodes": 1
+    },
+    {
+      "id": "aria-hidden-focus",
+      "nodes": 34
+    },
+    {
+      "id": "aria-prohibited-attr",
+      "nodes": 15
+    },
+    {
+      "id": "aria-required-attr",
+      "nodes": 7
+    },
+    {
+      "id": "aria-roles",
+      "nodes": 7
+    },
+    {
+      "id": "aria-valid-attr-value",
+      "nodes": 15
+    },
+    {
+      "id": "aria-valid-attr",
+      "nodes": 15
+    },
+    {
+      "id": "autocomplete-valid",
+      "nodes": 2
+    },
+    {
+      "id": "button-name",
+      "nodes": 6
+    },
+    {
+      "id": "bypass",
+      "nodes": 1
+    },
+    {
+      "id": "color-contrast",
+      "nodes": 136
+    },
+    {
+      "id": "definition-list",
+      "nodes": 1
+    },
+    {
+      "id": "dlitem",
+      "nodes": 6
+    },
+    {
+      "id": "document-title",
+      "nodes": 1
+    },
+    {
+      "id": "duplicate-id-aria",
+      "nodes": 13
+    },
+    {
+      "id": "empty-heading",
+      "nodes": 15
+    },
+    {
+      "id": "form-field-multiple-labels",
+      "nodes": 2
+    },
+    {
+      "id": "heading-order",
+      "nodes": 15
+    },
+    {
+      "id": "html-has-lang",
+      "nodes": 1
+    },
+    {
+      "id": "html-lang-valid",
+      "nodes": 1
+    },
+    {
+      "id": "image-alt",
+      "nodes": 3
+    },
+    {
+      "id": "image-redundant-alt",
+      "nodes": 3
+    },
+    {
+      "id": "label-title-only",
+      "nodes": 2
+    },
+    {
+      "id": "label",
+      "nodes": 2
+    },
+    {
+      "id": "landmark-banner-is-top-level",
+      "nodes": 1
+    },
+    {
+      "id": "landmark-contentinfo-is-top-level",
+      "nodes": 1
+    },
+    {
+      "id": "landmark-main-is-top-level",
+      "nodes": 1
+    },
+    {
+      "id": "landmark-no-duplicate-banner",
+      "nodes": 1
+    },
+    {
+      "id": "landmark-no-duplicate-contentinfo",
+      "nodes": 1
+    },
+    {
+      "id": "landmark-no-duplicate-main",
+      "nodes": 1
+    },
+    {
+      "id": "landmark-one-main",
+      "nodes": 1
+    },
+    {
+      "id": "landmark-unique",
+      "nodes": 9
+    },
+    {
+      "id": "link-name",
+      "nodes": 15
+    },
+    {
+      "id": "list",
+      "nodes": 3
+    },
+    {
+      "id": "listitem",
+      "nodes": 11
+    },
+    {
+      "id": "meta-viewport-large",
+      "nodes": 1
+    },
+    {
+      "id": "meta-viewport",
+      "nodes": 1
+    },
+    {
+      "id": "nested-interactive",
+      "nodes": 17
+    },
+    {
+      "id": "page-has-heading-one",
+      "nodes": 1
+    },
+    {
+      "id": "presentation-role-conflict",
+      "nodes": 3
+    },
+    {
+      "id": "region",
+      "nodes": 232
+    },
+    {
+      "id": "skip-link",
+      "nodes": 1
+    },
+    {
+      "id": "summary-name",
+      "nodes": 11
+    },
+    {
+      "id": "tabindex",
+      "nodes": 1
+    },
+    {
+      "id": "target-size",
+      "nodes": 30
+    }
+  ],
+  "inapplicable": [
+    "accesskeys",
+    "area-alt",
+    "aria-braille-equivalent",
+    "aria-command-name",
+    "aria-dialog-name",
+    "aria-input-field-name",
+    "aria-meter-name",
+    "aria-progressbar-name",
+    "aria-required-children",
+    "aria-required-parent",
+    "aria-tab-name",
+    "aria-text",
+    "aria-toggle-field-name",
+    "aria-tooltip-name",
+    "aria-treeitem-name",
+    "avoid-inline-spacing",
+    "blink",
+    "empty-table-header",
+    "frame-focusable-content",
+    "frame-tested",
+    "frame-title-unique",
+    "frame-title",
+    "html-xml-lang-mismatch",
+    "input-button-name",
+    "input-image-alt",
+    "link-in-text-block",
+    "marquee",
+    "meta-refresh",
+    "object-alt",
+    "role-img-alt",
+    "scope-attr-valid",
+    "scrollable-region-focusable",
+    "select-name",
+    "server-side-image-map",
+    "svg-img-alt",
+    "table-duplicate-name",
+    "td-headers-attr",
+    "th-has-data-cells",
+    "valid-lang",
+    "video-caption",
+    "no-autoplay-audio"
+  ]
+}

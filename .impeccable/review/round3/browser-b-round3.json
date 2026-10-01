@@ -1,0 +1,2152 @@
+{
+  "method": "isolated narrow round 3 technical confirmation",
+  "started": "2026-10-01T03:03:23.403Z",
+  "scansRun": [],
+  "contexts": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "allow + JS enabled",
+      "activated": {
+        "label": "示意 · 仅第三句可编辑",
+        "feedback": "直接改第三句，或点「改一句试试」。Ctrl / ⌘ + Enter 返修，Esc 重置。",
+        "inputDisabled": false,
+        "controlsVisible": true,
+        "noscriptText": "",
+        "noscriptVisible": false,
+        "groupLabel": "四句示例校样，第三句可编辑",
+        "downloads": [
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "zip",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+          }
+        ],
+        "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+      },
+      "guide": {
+        "viewportWidth": 1440,
+        "documentWidth": 1440,
+        "overflow": []
+      },
+      "guideDOM": {
+        "visible": true,
+        "stepCount": 4,
+        "paragraphs": [
+          {
+            "text": "安装包自带解释器，模型需单独配置。首次导入需要可用的文稿与语音模型，以及至少一个启用中的音色。按服务商要求准备两类模型的 ID、接口地址和鉴权凭据；使用本机服务时，先让它运行起来。",
+            "scrollWidth": 587,
+            "clientWidth": 587
+          },
+          {
+            "text": "打开「配置」→「文稿」→「添加模型」，选择服务商，核对模型 ID、接口地址与鉴权，点「保存」。回到列表点「校验」，通过后确认是当前模型，需要时点「设为当前」。再到「语音」→「添加模型」，同样保存、校验并指定当前。",
+            "scrollWidth": 563,
+            "clientWidth": 563
+          },
+          {
+            "text": "在「语音」页点「刷新目录」。新拉取的音色默认停用，选一个点「启用」，再「试听」。服务不提供目录时，用「按 id 添加」填写支持的音色 ID。确认至少一个音色已启用且能试听，再继续。",
+            "scrollWidth": 563,
+            "clientWidth": 563
+          },
+          {
+            "text": "回到「书籍」，导入带「第一章」等章题的短 TXT，在校样里点「切章」，选择规则或模型方式。规则切章、拆句本身不调用文稿模型；首次导入仍要求文稿模型可用。",
+            "scrollWidth": 563,
+            "clientWidth": 563
+          },
+          {
+            "text": "未标注的对白先补角色，再为旁白和角色选择已启用的音色，点「合成本章」。先试听已完成的句子，满意后「导出本章」。",
+            "scrollWidth": 563,
+            "clientWidth": 563
+          },
+          {
+            "text": "导入仍不可用时，检查两类当前模型的校验、已启用音色，以及引擎是否运行；引擎停止时按应用横幅提示重启。校验或试听失败，先看失败原因，再检查服务、地址和凭据。远程服务会收到用于合成或拆书的相关文本。",
+            "scrollWidth": 587,
+            "clientWidth": 587
+          }
+        ],
+        "workflow": "首次导入前，先校验并指定当前的文稿与语音模型，再启用至少一个音色。了解模型配置",
+        "installThird": "配好模型，导入书稿文稿、语音模型均需可用，并启用音色，再导入 TXT。按指南完成第一次出声"
+      },
+      "copied": {
+        "normal": [
+          {
+            "button": "#copy-command",
+            "width": 65,
+            "height": 44,
+            "label": "复制命令",
+            "minInlineSize": "65px",
+            "textAlign": "left",
+            "focus": ""
+          },
+          {
+            "button": "#copy-checksum",
+            "width": 65,
+            "height": 44,
+            "label": "复制校验值",
+            "minInlineSize": "65px",
+            "textAlign": "left",
+            "focus": ""
+          }
+        ],
+        "states": [
+          {
+            "task": {
+              "button": "#copy-command",
+              "status": "#command-copy-status",
+              "value": ".command > code",
+              "label": "复制命令"
+            },
+            "expected": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+            "value": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+            "snapshot": {
+              "width": 65,
+              "height": 44,
+              "label": "已复制",
+              "focus": "copy-command",
+              "status": "命令已复制。请在 Mac 的「终端」粘贴并运行。",
+              "selected": "",
+              "fallback": "",
+              "enabled": true,
+              "textAlign": "left",
+              "statusRect": {
+                "x": 707.5,
+                "y": 531.015625,
+                "width": 558.5,
+                "height": 22.75,
+                "top": 531.015625,
+                "right": 1266,
+                "bottom": 553.765625,
+                "left": 707.5
+              },
+              "statusVisible": true
+            },
+            "layout": {
+              "viewportWidth": 1440,
+              "documentWidth": 1440,
+              "overflow": []
+            }
+          },
+          {
+            "task": {
+              "button": "#copy-checksum",
+              "status": "#checksum-copy-status",
+              "value": "code[data-checksum]",
+              "label": "复制校验值"
+            },
+            "expected": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+            "value": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+            "snapshot": {
+              "width": 65,
+              "height": 44,
+              "label": "已复制",
+              "focus": "copy-checksum",
+              "status": "ZIP 校验值已复制。",
+              "selected": "",
+              "fallback": "",
+              "enabled": true,
+              "textAlign": "left",
+              "statusRect": {
+                "x": 693.5,
+                "y": 531.203125,
+                "width": 586.5,
+                "height": 22.75,
+                "top": 531.203125,
+                "right": 1280,
+                "bottom": 553.953125,
+                "left": 693.5
+              },
+              "statusVisible": true
+            },
+            "layout": {
+              "viewportWidth": 1440,
+              "documentWidth": 1440,
+              "overflow": []
+            }
+          }
+        ]
+      },
+      "logs": {
+        "console": [],
+        "errors": [],
+        "failed": []
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "deny",
+      "copied": {
+        "normal": [
+          {
+            "button": "#copy-command",
+            "width": 65,
+            "height": 44,
+            "label": "复制命令",
+            "minInlineSize": "65px",
+            "textAlign": "left",
+            "focus": ""
+          },
+          {
+            "button": "#copy-checksum",
+            "width": 65,
+            "height": 44,
+            "label": "复制校验值",
+            "minInlineSize": "65px",
+            "textAlign": "left",
+            "focus": ""
+          }
+        ],
+        "states": [
+          {
+            "task": {
+              "button": "#copy-command",
+              "status": "#command-copy-status",
+              "value": ".command > code",
+              "label": "复制命令"
+            },
+            "expected": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+            "value": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+            "snapshot": {
+              "width": 65,
+              "height": 44,
+              "label": "复制命令",
+              "focus": "copy-command",
+              "status": "自动复制不可用。请手动复制已选中的内容：shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+              "selected": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+              "fallback": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+              "enabled": true,
+              "textAlign": "left",
+              "statusRect": {
+                "x": 707.5,
+                "y": 531.015625,
+                "width": 558.5,
+                "height": 49.5,
+                "top": 531.015625,
+                "right": 1266,
+                "bottom": 580.515625,
+                "left": 707.5
+              },
+              "statusVisible": true
+            },
+            "layout": {
+              "viewportWidth": 1440,
+              "documentWidth": 1440,
+              "overflow": []
+            }
+          },
+          {
+            "task": {
+              "button": "#copy-checksum",
+              "status": "#checksum-copy-status",
+              "value": "code[data-checksum]",
+              "label": "复制校验值"
+            },
+            "expected": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+            "value": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+            "snapshot": {
+              "width": 65,
+              "height": 44,
+              "label": "复制校验值",
+              "focus": "copy-checksum",
+              "status": "自动复制不可用。请手动复制已选中的内容：e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+              "selected": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+              "fallback": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+              "enabled": true,
+              "textAlign": "left",
+              "statusRect": {
+                "x": 693.5,
+                "y": 530.953125,
+                "width": 586.5,
+                "height": 49.5,
+                "top": 530.953125,
+                "right": 1280,
+                "bottom": 580.453125,
+                "left": 693.5
+              },
+              "statusVisible": true
+            },
+            "layout": {
+              "viewportWidth": 1440,
+              "documentWidth": 1440,
+              "overflow": []
+            }
+          }
+        ]
+      },
+      "logs": {
+        "console": [],
+        "errors": [],
+        "failed": []
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "JS disabled",
+      "staticState": {
+        "label": "校样示意",
+        "feedback": "此处是静态校样示意，下载与安装仍可使用。",
+        "inputDisabled": true,
+        "controlsVisible": false,
+        "noscriptText": "启用 JavaScript 后，可修改第三句、演示返修并重置。",
+        "noscriptVisible": true,
+        "groupLabel": "四句示例校样，第三句可编辑",
+        "downloads": [
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "zip",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+          }
+        ],
+        "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+      },
+      "noJsLayout": {
+        "viewportWidth": 1440,
+        "documentWidth": 1440,
+        "overflow": []
+      },
+      "logs": {
+        "console": [],
+        "errors": [],
+        "failed": []
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "mode": "allow + JS enabled",
+      "activated": {
+        "label": "示意 · 仅第三句可编辑",
+        "feedback": "直接改第三句，或点「改一句试试」。Ctrl / ⌘ + Enter 返修，Esc 重置。",
+        "inputDisabled": false,
+        "controlsVisible": true,
+        "noscriptText": "",
+        "noscriptVisible": false,
+        "groupLabel": "四句示例校样，第三句可编辑",
+        "downloads": [
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "zip",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+          }
+        ],
+        "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+      },
+      "guide": {
+        "viewportWidth": 390,
+        "documentWidth": 390,
+        "overflow": []
+      },
+      "guideDOM": {
+        "visible": true,
+        "stepCount": 4,
+        "paragraphs": [
+          {
+            "text": "安装包自带解释器，模型需单独配置。首次导入需要可用的文稿与语音模型，以及至少一个启用中的音色。按服务商要求准备两类模型的 ID、接口地址和鉴权凭据；使用本机服务时，先让它运行起来。",
+            "scrollWidth": 350,
+            "clientWidth": 350
+          },
+          {
+            "text": "打开「配置」→「文稿」→「添加模型」，选择服务商，核对模型 ID、接口地址与鉴权，点「保存」。回到列表点「校验」，通过后确认是当前模型，需要时点「设为当前」。再到「语音」→「添加模型」，同样保存、校验并指定当前。",
+            "scrollWidth": 326,
+            "clientWidth": 326
+          },
+          {
+            "text": "在「语音」页点「刷新目录」。新拉取的音色默认停用，选一个点「启用」，再「试听」。服务不提供目录时，用「按 id 添加」填写支持的音色 ID。确认至少一个音色已启用且能试听，再继续。",
+            "scrollWidth": 326,
+            "clientWidth": 326
+          },
+          {
+            "text": "回到「书籍」，导入带「第一章」等章题的短 TXT，在校样里点「切章」，选择规则或模型方式。规则切章、拆句本身不调用文稿模型；首次导入仍要求文稿模型可用。",
+            "scrollWidth": 326,
+            "clientWidth": 326
+          },
+          {
+            "text": "未标注的对白先补角色，再为旁白和角色选择已启用的音色，点「合成本章」。先试听已完成的句子，满意后「导出本章」。",
+            "scrollWidth": 326,
+            "clientWidth": 326
+          },
+          {
+            "text": "导入仍不可用时，检查两类当前模型的校验、已启用音色，以及引擎是否运行；引擎停止时按应用横幅提示重启。校验或试听失败，先看失败原因，再检查服务、地址和凭据。远程服务会收到用于合成或拆书的相关文本。",
+            "scrollWidth": 350,
+            "clientWidth": 350
+          }
+        ],
+        "workflow": "首次导入前，先校验并指定当前的文稿与语音模型，再启用至少一个音色。了解模型配置",
+        "installThird": "配好模型，导入书稿文稿、语音模型均需可用，并启用音色，再导入 TXT。按指南完成第一次出声"
+      },
+      "copied": {
+        "normal": [
+          {
+            "button": "#copy-command",
+            "width": 65,
+            "height": 44,
+            "label": "复制命令",
+            "minInlineSize": "65px",
+            "textAlign": "left",
+            "focus": ""
+          },
+          {
+            "button": "#copy-checksum",
+            "width": 65,
+            "height": 44,
+            "label": "复制校验值",
+            "minInlineSize": "65px",
+            "textAlign": "left",
+            "focus": ""
+          }
+        ],
+        "states": [
+          {
+            "task": {
+              "button": "#copy-command",
+              "status": "#command-copy-status",
+              "value": ".command > code",
+              "label": "复制命令"
+            },
+            "expected": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+            "value": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+            "snapshot": {
+              "width": 65,
+              "height": 44,
+              "label": "已复制",
+              "focus": "copy-command",
+              "status": "命令已复制。请在 Mac 的「终端」粘贴并运行。",
+              "selected": "",
+              "fallback": "",
+              "enabled": true,
+              "textAlign": "left",
+              "statusRect": {
+                "x": 34,
+                "y": 494.5625,
+                "width": 322,
+                "height": 22.75,
+                "top": 494.5625,
+                "right": 356,
+                "bottom": 517.3125,
+                "left": 34
+              },
+              "statusVisible": true
+            },
+            "layout": {
+              "viewportWidth": 390,
+              "documentWidth": 390,
+              "overflow": []
+            }
+          },
+          {
+            "task": {
+              "button": "#copy-checksum",
+              "status": "#checksum-copy-status",
+              "value": "code[data-checksum]",
+              "label": "复制校验值"
+            },
+            "expected": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+            "value": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+            "snapshot": {
+              "width": 65,
+              "height": 44,
+              "label": "已复制",
+              "focus": "copy-checksum",
+              "status": "ZIP 校验值已复制。",
+              "selected": "",
+              "fallback": "",
+              "enabled": true,
+              "textAlign": "left",
+              "statusRect": {
+                "x": 20,
+                "y": 495.4375,
+                "width": 350,
+                "height": 22.75,
+                "top": 495.4375,
+                "right": 370,
+                "bottom": 518.1875,
+                "left": 20
+              },
+              "statusVisible": true
+            },
+            "layout": {
+              "viewportWidth": 390,
+              "documentWidth": 390,
+              "overflow": []
+            }
+          }
+        ]
+      },
+      "logs": {
+        "console": [],
+        "errors": [],
+        "failed": []
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "mode": "deny",
+      "copied": {
+        "normal": [
+          {
+            "button": "#copy-command",
+            "width": 65,
+            "height": 44,
+            "label": "复制命令",
+            "minInlineSize": "65px",
+            "textAlign": "left",
+            "focus": ""
+          },
+          {
+            "button": "#copy-checksum",
+            "width": 65,
+            "height": 44,
+            "label": "复制校验值",
+            "minInlineSize": "65px",
+            "textAlign": "left",
+            "focus": ""
+          }
+        ],
+        "states": [
+          {
+            "task": {
+              "button": "#copy-command",
+              "status": "#command-copy-status",
+              "value": ".command > code",
+              "label": "复制命令"
+            },
+            "expected": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+            "value": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+            "snapshot": {
+              "width": 65,
+              "height": 44,
+              "label": "复制命令",
+              "focus": "copy-command",
+              "status": "自动复制不可用。请手动复制已选中的内容：shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+              "selected": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+              "fallback": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+              "enabled": true,
+              "textAlign": "left",
+              "statusRect": {
+                "x": 34,
+                "y": 494.5625,
+                "width": 322,
+                "height": 72.25,
+                "top": 494.5625,
+                "right": 356,
+                "bottom": 566.8125,
+                "left": 34
+              },
+              "statusVisible": true
+            },
+            "layout": {
+              "viewportWidth": 390,
+              "documentWidth": 390,
+              "overflow": []
+            }
+          },
+          {
+            "task": {
+              "button": "#copy-checksum",
+              "status": "#checksum-copy-status",
+              "value": "code[data-checksum]",
+              "label": "复制校验值"
+            },
+            "expected": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+            "value": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+            "snapshot": {
+              "width": 65,
+              "height": 44,
+              "label": "复制校验值",
+              "focus": "copy-checksum",
+              "status": "自动复制不可用。请手动复制已选中的内容：e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+              "selected": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+              "fallback": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+              "enabled": true,
+              "textAlign": "left",
+              "statusRect": {
+                "x": 20,
+                "y": 494.9375,
+                "width": 350,
+                "height": 72.25,
+                "top": 494.9375,
+                "right": 370,
+                "bottom": 567.1875,
+                "left": 20
+              },
+              "statusVisible": true
+            },
+            "layout": {
+              "viewportWidth": 390,
+              "documentWidth": 390,
+              "overflow": []
+            }
+          }
+        ]
+      },
+      "logs": {
+        "console": [],
+        "errors": [],
+        "failed": []
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "mode": "JS disabled",
+      "staticState": {
+        "label": "校样示意",
+        "feedback": "此处是静态校样示意，下载与安装仍可使用。",
+        "inputDisabled": true,
+        "controlsVisible": false,
+        "noscriptText": "启用 JavaScript 后，可修改第三句、演示返修并重置。",
+        "noscriptVisible": true,
+        "groupLabel": "四句示例校样，第三句可编辑",
+        "downloads": [
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "zip",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+          }
+        ],
+        "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+      },
+      "noJsLayout": {
+        "viewportWidth": 390,
+        "documentWidth": 390,
+        "overflow": []
+      },
+      "logs": {
+        "console": [],
+        "errors": [],
+        "failed": []
+      }
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 740
+      },
+      "mode": "allow + JS enabled",
+      "activated": {
+        "label": "示意 · 仅第三句可编辑",
+        "feedback": "直接改第三句，或点「改一句试试」。Ctrl / ⌘ + Enter 返修，Esc 重置。",
+        "inputDisabled": false,
+        "controlsVisible": true,
+        "noscriptText": "",
+        "noscriptVisible": false,
+        "groupLabel": "四句示例校样，第三句可编辑",
+        "downloads": [
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "zip",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+          }
+        ],
+        "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+      },
+      "guide": {
+        "viewportWidth": 320,
+        "documentWidth": 320,
+        "overflow": []
+      },
+      "guideDOM": {
+        "visible": true,
+        "stepCount": 4,
+        "paragraphs": [
+          {
+            "text": "安装包自带解释器，模型需单独配置。首次导入需要可用的文稿与语音模型，以及至少一个启用中的音色。按服务商要求准备两类模型的 ID、接口地址和鉴权凭据；使用本机服务时，先让它运行起来。",
+            "scrollWidth": 280,
+            "clientWidth": 280
+          },
+          {
+            "text": "打开「配置」→「文稿」→「添加模型」，选择服务商，核对模型 ID、接口地址与鉴权，点「保存」。回到列表点「校验」，通过后确认是当前模型，需要时点「设为当前」。再到「语音」→「添加模型」，同样保存、校验并指定当前。",
+            "scrollWidth": 256,
+            "clientWidth": 256
+          },
+          {
+            "text": "在「语音」页点「刷新目录」。新拉取的音色默认停用，选一个点「启用」，再「试听」。服务不提供目录时，用「按 id 添加」填写支持的音色 ID。确认至少一个音色已启用且能试听，再继续。",
+            "scrollWidth": 256,
+            "clientWidth": 256
+          },
+          {
+            "text": "回到「书籍」，导入带「第一章」等章题的短 TXT，在校样里点「切章」，选择规则或模型方式。规则切章、拆句本身不调用文稿模型；首次导入仍要求文稿模型可用。",
+            "scrollWidth": 256,
+            "clientWidth": 256
+          },
+          {
+            "text": "未标注的对白先补角色，再为旁白和角色选择已启用的音色，点「合成本章」。先试听已完成的句子，满意后「导出本章」。",
+            "scrollWidth": 256,
+            "clientWidth": 256
+          },
+          {
+            "text": "导入仍不可用时，检查两类当前模型的校验、已启用音色，以及引擎是否运行；引擎停止时按应用横幅提示重启。校验或试听失败，先看失败原因，再检查服务、地址和凭据。远程服务会收到用于合成或拆书的相关文本。",
+            "scrollWidth": 280,
+            "clientWidth": 280
+          }
+        ],
+        "workflow": "首次导入前，先校验并指定当前的文稿与语音模型，再启用至少一个音色。了解模型配置",
+        "installThird": "配好模型，导入书稿文稿、语音模型均需可用，并启用音色，再导入 TXT。按指南完成第一次出声"
+      },
+      "copied": {
+        "normal": [
+          {
+            "button": "#copy-command",
+            "width": 65,
+            "height": 44,
+            "label": "复制命令",
+            "minInlineSize": "65px",
+            "textAlign": "left",
+            "focus": ""
+          },
+          {
+            "button": "#copy-checksum",
+            "width": 65,
+            "height": 44,
+            "label": "复制校验值",
+            "minInlineSize": "65px",
+            "textAlign": "left",
+            "focus": ""
+          }
+        ],
+        "states": [
+          {
+            "task": {
+              "button": "#copy-command",
+              "status": "#command-copy-status",
+              "value": ".command > code",
+              "label": "复制命令"
+            },
+            "expected": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+            "value": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+            "snapshot": {
+              "width": 65,
+              "height": 44,
+              "label": "已复制",
+              "focus": "copy-command",
+              "status": "命令已复制。请在 Mac 的「终端」粘贴并运行。",
+              "selected": "",
+              "fallback": "",
+              "enabled": true,
+              "textAlign": "left",
+              "statusRect": {
+                "x": 34,
+                "y": 443.21875,
+                "width": 252,
+                "height": 45.5,
+                "top": 443.21875,
+                "right": 286,
+                "bottom": 488.71875,
+                "left": 34
+              },
+              "statusVisible": true
+            },
+            "layout": {
+              "viewportWidth": 320,
+              "documentWidth": 320,
+              "overflow": []
+            }
+          },
+          {
+            "task": {
+              "button": "#copy-checksum",
+              "status": "#checksum-copy-status",
+              "value": "code[data-checksum]",
+              "label": "复制校验值"
+            },
+            "expected": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+            "value": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+            "snapshot": {
+              "width": 65,
+              "height": 44,
+              "label": "已复制",
+              "focus": "copy-checksum",
+              "status": "ZIP 校验值已复制。",
+              "selected": "",
+              "fallback": "",
+              "enabled": true,
+              "textAlign": "left",
+              "statusRect": {
+                "x": 20,
+                "y": 442.84375,
+                "width": 280,
+                "height": 22.75,
+                "top": 442.84375,
+                "right": 300,
+                "bottom": 465.59375,
+                "left": 20
+              },
+              "statusVisible": true
+            },
+            "layout": {
+              "viewportWidth": 320,
+              "documentWidth": 320,
+              "overflow": []
+            }
+          }
+        ]
+      },
+      "logs": {
+        "console": [],
+        "errors": [],
+        "failed": []
+      }
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 740
+      },
+      "mode": "deny",
+      "copied": {
+        "normal": [
+          {
+            "button": "#copy-command",
+            "width": 65,
+            "height": 44,
+            "label": "复制命令",
+            "minInlineSize": "65px",
+            "textAlign": "left",
+            "focus": ""
+          },
+          {
+            "button": "#copy-checksum",
+            "width": 65,
+            "height": 44,
+            "label": "复制校验值",
+            "minInlineSize": "65px",
+            "textAlign": "left",
+            "focus": ""
+          }
+        ],
+        "states": [
+          {
+            "task": {
+              "button": "#copy-command",
+              "status": "#command-copy-status",
+              "value": ".command > code",
+              "label": "复制命令"
+            },
+            "expected": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+            "value": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+            "snapshot": {
+              "width": 65,
+              "height": 44,
+              "label": "复制命令",
+              "focus": "copy-command",
+              "status": "自动复制不可用。请手动复制已选中的内容：shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+              "selected": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+              "fallback": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+              "enabled": true,
+              "textAlign": "left",
+              "statusRect": {
+                "x": 34,
+                "y": 443.21875,
+                "width": 252,
+                "height": 117.75,
+                "top": 443.21875,
+                "right": 286,
+                "bottom": 560.96875,
+                "left": 34
+              },
+              "statusVisible": true
+            },
+            "layout": {
+              "viewportWidth": 320,
+              "documentWidth": 320,
+              "overflow": []
+            }
+          },
+          {
+            "task": {
+              "button": "#copy-checksum",
+              "status": "#checksum-copy-status",
+              "value": "code[data-checksum]",
+              "label": "复制校验值"
+            },
+            "expected": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+            "value": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+            "snapshot": {
+              "width": 65,
+              "height": 44,
+              "label": "复制校验值",
+              "focus": "copy-checksum",
+              "status": "自动复制不可用。请手动复制已选中的内容：e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+              "selected": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+              "fallback": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+              "enabled": true,
+              "textAlign": "left",
+              "statusRect": {
+                "x": 20,
+                "y": 443.09375,
+                "width": 280,
+                "height": 72.25,
+                "top": 443.09375,
+                "right": 300,
+                "bottom": 515.34375,
+                "left": 20
+              },
+              "statusVisible": true
+            },
+            "layout": {
+              "viewportWidth": 320,
+              "documentWidth": 320,
+              "overflow": []
+            }
+          }
+        ]
+      },
+      "logs": {
+        "console": [],
+        "errors": [],
+        "failed": []
+      }
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 740
+      },
+      "mode": "JS disabled",
+      "staticState": {
+        "label": "校样示意",
+        "feedback": "此处是静态校样示意，下载与安装仍可使用。",
+        "inputDisabled": true,
+        "controlsVisible": false,
+        "noscriptText": "启用 JavaScript 后，可修改第三句、演示返修并重置。",
+        "noscriptVisible": true,
+        "groupLabel": "四句示例校样，第三句可编辑",
+        "downloads": [
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "zip",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+          }
+        ],
+        "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+      },
+      "noJsLayout": {
+        "viewportWidth": 320,
+        "documentWidth": 320,
+        "overflow": []
+      },
+      "logs": {
+        "console": [],
+        "errors": [],
+        "failed": []
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "mode": "site.js blocked",
+      "blockedState": {
+        "label": "校样示意",
+        "feedback": "此处是静态校样示意，下载与安装仍可使用。",
+        "inputDisabled": true,
+        "controlsVisible": false,
+        "noscriptText": "",
+        "noscriptVisible": false,
+        "groupLabel": "四句示例校样，第三句可编辑",
+        "downloads": [
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "zip",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+          }
+        ],
+        "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+      },
+      "blockedLayout": {
+        "viewportWidth": 390,
+        "documentWidth": 390,
+        "overflow": []
+      },
+      "logs": {
+        "console": [
+          {
+            "type": "error",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "location": {
+              "url": "http://127.0.0.1:4173/site.js",
+              "line": 0,
+              "column": 0,
+              "lineNumber": 0,
+              "columnNumber": 0
+            }
+          }
+        ],
+        "errors": [],
+        "failed": [
+          {
+            "url": "http://127.0.0.1:4173/site.js",
+            "reason": "net::ERR_FAILED"
+          }
+        ]
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "JS enabled 1440: initialization label and links",
+      "pass": true,
+      "observed": {
+        "label": "示意 · 仅第三句可编辑",
+        "feedback": "直接改第三句，或点「改一句试试」。Ctrl / ⌘ + Enter 返修，Esc 重置。",
+        "inputDisabled": false,
+        "controlsVisible": true,
+        "noscriptText": "",
+        "noscriptVisible": false,
+        "groupLabel": "四句示例校样，第三句可编辑",
+        "downloads": [
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "zip",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+          }
+        ],
+        "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+      }
+    },
+    {
+      "name": "long guide 1440: layout and text rendering",
+      "pass": true,
+      "observed": {
+        "guide": {
+          "viewportWidth": 1440,
+          "documentWidth": 1440,
+          "overflow": []
+        },
+        "guideDOM": {
+          "visible": true,
+          "stepCount": 4,
+          "paragraphs": [
+            {
+              "text": "安装包自带解释器，模型需单独配置。首次导入需要可用的文稿与语音模型，以及至少一个启用中的音色。按服务商要求准备两类模型的 ID、接口地址和鉴权凭据；使用本机服务时，先让它运行起来。",
+              "scrollWidth": 587,
+              "clientWidth": 587
+            },
+            {
+              "text": "打开「配置」→「文稿」→「添加模型」，选择服务商，核对模型 ID、接口地址与鉴权，点「保存」。回到列表点「校验」，通过后确认是当前模型，需要时点「设为当前」。再到「语音」→「添加模型」，同样保存、校验并指定当前。",
+              "scrollWidth": 563,
+              "clientWidth": 563
+            },
+            {
+              "text": "在「语音」页点「刷新目录」。新拉取的音色默认停用，选一个点「启用」，再「试听」。服务不提供目录时，用「按 id 添加」填写支持的音色 ID。确认至少一个音色已启用且能试听，再继续。",
+              "scrollWidth": 563,
+              "clientWidth": 563
+            },
+            {
+              "text": "回到「书籍」，导入带「第一章」等章题的短 TXT，在校样里点「切章」，选择规则或模型方式。规则切章、拆句本身不调用文稿模型；首次导入仍要求文稿模型可用。",
+              "scrollWidth": 563,
+              "clientWidth": 563
+            },
+            {
+              "text": "未标注的对白先补角色，再为旁白和角色选择已启用的音色，点「合成本章」。先试听已完成的句子，满意后「导出本章」。",
+              "scrollWidth": 563,
+              "clientWidth": 563
+            },
+            {
+              "text": "导入仍不可用时，检查两类当前模型的校验、已启用音色，以及引擎是否运行；引擎停止时按应用横幅提示重启。校验或试听失败，先看失败原因，再检查服务、地址和凭据。远程服务会收到用于合成或拆书的相关文本。",
+              "scrollWidth": 587,
+              "clientWidth": 587
+            }
+          ],
+          "workflow": "首次导入前，先校验并指定当前的文稿与语音模型，再启用至少一个音色。了解模型配置",
+          "installThird": "配好模型，导入书稿文稿、语音模型均需可用，并启用音色，再导入 TXT。按指南完成第一次出声"
+        }
+      }
+    },
+    {
+      "name": "copy allow 1440: default sizes",
+      "pass": true,
+      "observed": [
+        {
+          "button": "#copy-command",
+          "width": 65,
+          "height": 44,
+          "label": "复制命令",
+          "minInlineSize": "65px",
+          "textAlign": "left",
+          "focus": ""
+        },
+        {
+          "button": "#copy-checksum",
+          "width": 65,
+          "height": 44,
+          "label": "复制校验值",
+          "minInlineSize": "65px",
+          "textAlign": "left",
+          "focus": ""
+        }
+      ]
+    },
+    {
+      "name": "copy allow 1440 #copy-command: feedback dimensions/value",
+      "pass": true,
+      "observed": {
+        "expected": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+        "value": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+        "snapshot": {
+          "width": 65,
+          "height": 44,
+          "label": "已复制",
+          "focus": "copy-command",
+          "status": "命令已复制。请在 Mac 的「终端」粘贴并运行。",
+          "selected": "",
+          "fallback": "",
+          "enabled": true,
+          "textAlign": "left",
+          "statusRect": {
+            "x": 707.5,
+            "y": 531.015625,
+            "width": 558.5,
+            "height": 22.75,
+            "top": 531.015625,
+            "right": 1266,
+            "bottom": 553.765625,
+            "left": 707.5
+          },
+          "statusVisible": true
+        },
+        "layout": {
+          "viewportWidth": 1440,
+          "documentWidth": 1440,
+          "overflow": []
+        }
+      }
+    },
+    {
+      "name": "copy allow 1440 #copy-checksum: feedback dimensions/value",
+      "pass": true,
+      "observed": {
+        "expected": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+        "value": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+        "snapshot": {
+          "width": 65,
+          "height": 44,
+          "label": "已复制",
+          "focus": "copy-checksum",
+          "status": "ZIP 校验值已复制。",
+          "selected": "",
+          "fallback": "",
+          "enabled": true,
+          "textAlign": "left",
+          "statusRect": {
+            "x": 693.5,
+            "y": 531.203125,
+            "width": 586.5,
+            "height": 22.75,
+            "top": 531.203125,
+            "right": 1280,
+            "bottom": 553.953125,
+            "left": 693.5
+          },
+          "statusVisible": true
+        },
+        "layout": {
+          "viewportWidth": 1440,
+          "documentWidth": 1440,
+          "overflow": []
+        }
+      }
+    },
+    {
+      "name": "copy allow 1440: restored labels/sizes",
+      "pass": true,
+      "observed": [
+        {
+          "button": "#copy-command",
+          "width": 65,
+          "height": 44,
+          "label": "复制命令",
+          "minInlineSize": "65px",
+          "textAlign": "left",
+          "focus": "copy-checksum"
+        },
+        {
+          "button": "#copy-checksum",
+          "width": 65,
+          "height": 44,
+          "label": "复制校验值",
+          "minInlineSize": "65px",
+          "textAlign": "left",
+          "focus": "copy-checksum"
+        }
+      ]
+    },
+    {
+      "name": "normal CSP allow 1440: clean console",
+      "pass": true,
+      "observed": {
+        "console": [],
+        "errors": [],
+        "failed": []
+      }
+    },
+    {
+      "name": "copy deny 1440: default sizes",
+      "pass": true,
+      "observed": [
+        {
+          "button": "#copy-command",
+          "width": 65,
+          "height": 44,
+          "label": "复制命令",
+          "minInlineSize": "65px",
+          "textAlign": "left",
+          "focus": ""
+        },
+        {
+          "button": "#copy-checksum",
+          "width": 65,
+          "height": 44,
+          "label": "复制校验值",
+          "minInlineSize": "65px",
+          "textAlign": "left",
+          "focus": ""
+        }
+      ]
+    },
+    {
+      "name": "copy deny 1440 #copy-command: feedback dimensions/value",
+      "pass": true,
+      "observed": {
+        "expected": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+        "value": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+        "snapshot": {
+          "width": 65,
+          "height": 44,
+          "label": "复制命令",
+          "focus": "copy-command",
+          "status": "自动复制不可用。请手动复制已选中的内容：shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+          "selected": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+          "fallback": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+          "enabled": true,
+          "textAlign": "left",
+          "statusRect": {
+            "x": 707.5,
+            "y": 531.015625,
+            "width": 558.5,
+            "height": 49.5,
+            "top": 531.015625,
+            "right": 1266,
+            "bottom": 580.515625,
+            "left": 707.5
+          },
+          "statusVisible": true
+        },
+        "layout": {
+          "viewportWidth": 1440,
+          "documentWidth": 1440,
+          "overflow": []
+        }
+      }
+    },
+    {
+      "name": "copy deny 1440 #copy-checksum: feedback dimensions/value",
+      "pass": true,
+      "observed": {
+        "expected": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+        "value": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+        "snapshot": {
+          "width": 65,
+          "height": 44,
+          "label": "复制校验值",
+          "focus": "copy-checksum",
+          "status": "自动复制不可用。请手动复制已选中的内容：e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+          "selected": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+          "fallback": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+          "enabled": true,
+          "textAlign": "left",
+          "statusRect": {
+            "x": 693.5,
+            "y": 530.953125,
+            "width": 586.5,
+            "height": 49.5,
+            "top": 530.953125,
+            "right": 1280,
+            "bottom": 580.453125,
+            "left": 693.5
+          },
+          "statusVisible": true
+        },
+        "layout": {
+          "viewportWidth": 1440,
+          "documentWidth": 1440,
+          "overflow": []
+        }
+      }
+    },
+    {
+      "name": "normal CSP deny 1440: clean console",
+      "pass": true,
+      "observed": {
+        "console": [],
+        "errors": [],
+        "failed": []
+      }
+    },
+    {
+      "name": "JS disabled 1440: understandable static demo and retained downloads",
+      "pass": true,
+      "observed": {
+        "staticState": {
+          "label": "校样示意",
+          "feedback": "此处是静态校样示意，下载与安装仍可使用。",
+          "inputDisabled": true,
+          "controlsVisible": false,
+          "noscriptText": "启用 JavaScript 后，可修改第三句、演示返修并重置。",
+          "noscriptVisible": true,
+          "groupLabel": "四句示例校样，第三句可编辑",
+          "downloads": [
+            {
+              "type": "dmg",
+              "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+            },
+            {
+              "type": "dmg",
+              "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+            },
+            {
+              "type": "zip",
+              "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+            }
+          ],
+          "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+        },
+        "noJsLayout": {
+          "viewportWidth": 1440,
+          "documentWidth": 1440,
+          "overflow": []
+        },
+        "logs": {
+          "console": [],
+          "errors": [],
+          "failed": []
+        }
+      }
+    },
+    {
+      "name": "JS enabled 390: initialization label and links",
+      "pass": true,
+      "observed": {
+        "label": "示意 · 仅第三句可编辑",
+        "feedback": "直接改第三句，或点「改一句试试」。Ctrl / ⌘ + Enter 返修，Esc 重置。",
+        "inputDisabled": false,
+        "controlsVisible": true,
+        "noscriptText": "",
+        "noscriptVisible": false,
+        "groupLabel": "四句示例校样，第三句可编辑",
+        "downloads": [
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "zip",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+          }
+        ],
+        "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+      }
+    },
+    {
+      "name": "long guide 390: layout and text rendering",
+      "pass": true,
+      "observed": {
+        "guide": {
+          "viewportWidth": 390,
+          "documentWidth": 390,
+          "overflow": []
+        },
+        "guideDOM": {
+          "visible": true,
+          "stepCount": 4,
+          "paragraphs": [
+            {
+              "text": "安装包自带解释器，模型需单独配置。首次导入需要可用的文稿与语音模型，以及至少一个启用中的音色。按服务商要求准备两类模型的 ID、接口地址和鉴权凭据；使用本机服务时，先让它运行起来。",
+              "scrollWidth": 350,
+              "clientWidth": 350
+            },
+            {
+              "text": "打开「配置」→「文稿」→「添加模型」，选择服务商，核对模型 ID、接口地址与鉴权，点「保存」。回到列表点「校验」，通过后确认是当前模型，需要时点「设为当前」。再到「语音」→「添加模型」，同样保存、校验并指定当前。",
+              "scrollWidth": 326,
+              "clientWidth": 326
+            },
+            {
+              "text": "在「语音」页点「刷新目录」。新拉取的音色默认停用，选一个点「启用」，再「试听」。服务不提供目录时，用「按 id 添加」填写支持的音色 ID。确认至少一个音色已启用且能试听，再继续。",
+              "scrollWidth": 326,
+              "clientWidth": 326
+            },
+            {
+              "text": "回到「书籍」，导入带「第一章」等章题的短 TXT，在校样里点「切章」，选择规则或模型方式。规则切章、拆句本身不调用文稿模型；首次导入仍要求文稿模型可用。",
+              "scrollWidth": 326,
+              "clientWidth": 326
+            },
+            {
+              "text": "未标注的对白先补角色，再为旁白和角色选择已启用的音色，点「合成本章」。先试听已完成的句子，满意后「导出本章」。",
+              "scrollWidth": 326,
+              "clientWidth": 326
+            },
+            {
+              "text": "导入仍不可用时，检查两类当前模型的校验、已启用音色，以及引擎是否运行；引擎停止时按应用横幅提示重启。校验或试听失败，先看失败原因，再检查服务、地址和凭据。远程服务会收到用于合成或拆书的相关文本。",
+              "scrollWidth": 350,
+              "clientWidth": 350
+            }
+          ],
+          "workflow": "首次导入前，先校验并指定当前的文稿与语音模型，再启用至少一个音色。了解模型配置",
+          "installThird": "配好模型，导入书稿文稿、语音模型均需可用，并启用音色，再导入 TXT。按指南完成第一次出声"
+        }
+      }
+    },
+    {
+      "name": "copy allow 390: default sizes",
+      "pass": true,
+      "observed": [
+        {
+          "button": "#copy-command",
+          "width": 65,
+          "height": 44,
+          "label": "复制命令",
+          "minInlineSize": "65px",
+          "textAlign": "left",
+          "focus": ""
+        },
+        {
+          "button": "#copy-checksum",
+          "width": 65,
+          "height": 44,
+          "label": "复制校验值",
+          "minInlineSize": "65px",
+          "textAlign": "left",
+          "focus": ""
+        }
+      ]
+    },
+    {
+      "name": "copy allow 390 #copy-command: feedback dimensions/value",
+      "pass": true,
+      "observed": {
+        "expected": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+        "value": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+        "snapshot": {
+          "width": 65,
+          "height": 44,
+          "label": "已复制",
+          "focus": "copy-command",
+          "status": "命令已复制。请在 Mac 的「终端」粘贴并运行。",
+          "selected": "",
+          "fallback": "",
+          "enabled": true,
+          "textAlign": "left",
+          "statusRect": {
+            "x": 34,
+            "y": 494.5625,
+            "width": 322,
+            "height": 22.75,
+            "top": 494.5625,
+            "right": 356,
+            "bottom": 517.3125,
+            "left": 34
+          },
+          "statusVisible": true
+        },
+        "layout": {
+          "viewportWidth": 390,
+          "documentWidth": 390,
+          "overflow": []
+        }
+      }
+    },
+    {
+      "name": "copy allow 390 #copy-checksum: feedback dimensions/value",
+      "pass": true,
+      "observed": {
+        "expected": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+        "value": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+        "snapshot": {
+          "width": 65,
+          "height": 44,
+          "label": "已复制",
+          "focus": "copy-checksum",
+          "status": "ZIP 校验值已复制。",
+          "selected": "",
+          "fallback": "",
+          "enabled": true,
+          "textAlign": "left",
+          "statusRect": {
+            "x": 20,
+            "y": 495.4375,
+            "width": 350,
+            "height": 22.75,
+            "top": 495.4375,
+            "right": 370,
+            "bottom": 518.1875,
+            "left": 20
+          },
+          "statusVisible": true
+        },
+        "layout": {
+          "viewportWidth": 390,
+          "documentWidth": 390,
+          "overflow": []
+        }
+      }
+    },
+    {
+      "name": "copy allow 390: restored labels/sizes",
+      "pass": true,
+      "observed": [
+        {
+          "button": "#copy-command",
+          "width": 65,
+          "height": 44,
+          "label": "复制命令",
+          "minInlineSize": "65px",
+          "textAlign": "left",
+          "focus": "copy-checksum"
+        },
+        {
+          "button": "#copy-checksum",
+          "width": 65,
+          "height": 44,
+          "label": "复制校验值",
+          "minInlineSize": "65px",
+          "textAlign": "left",
+          "focus": "copy-checksum"
+        }
+      ]
+    },
+    {
+      "name": "normal CSP allow 390: clean console",
+      "pass": true,
+      "observed": {
+        "console": [],
+        "errors": [],
+        "failed": []
+      }
+    },
+    {
+      "name": "copy deny 390: default sizes",
+      "pass": true,
+      "observed": [
+        {
+          "button": "#copy-command",
+          "width": 65,
+          "height": 44,
+          "label": "复制命令",
+          "minInlineSize": "65px",
+          "textAlign": "left",
+          "focus": ""
+        },
+        {
+          "button": "#copy-checksum",
+          "width": 65,
+          "height": 44,
+          "label": "复制校验值",
+          "minInlineSize": "65px",
+          "textAlign": "left",
+          "focus": ""
+        }
+      ]
+    },
+    {
+      "name": "copy deny 390 #copy-command: feedback dimensions/value",
+      "pass": true,
+      "observed": {
+        "expected": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+        "value": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+        "snapshot": {
+          "width": 65,
+          "height": 44,
+          "label": "复制命令",
+          "focus": "copy-command",
+          "status": "自动复制不可用。请手动复制已选中的内容：shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+          "selected": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+          "fallback": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+          "enabled": true,
+          "textAlign": "left",
+          "statusRect": {
+            "x": 34,
+            "y": 494.5625,
+            "width": 322,
+            "height": 72.25,
+            "top": 494.5625,
+            "right": 356,
+            "bottom": 566.8125,
+            "left": 34
+          },
+          "statusVisible": true
+        },
+        "layout": {
+          "viewportWidth": 390,
+          "documentWidth": 390,
+          "overflow": []
+        }
+      }
+    },
+    {
+      "name": "copy deny 390 #copy-checksum: feedback dimensions/value",
+      "pass": true,
+      "observed": {
+        "expected": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+        "value": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+        "snapshot": {
+          "width": 65,
+          "height": 44,
+          "label": "复制校验值",
+          "focus": "copy-checksum",
+          "status": "自动复制不可用。请手动复制已选中的内容：e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+          "selected": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+          "fallback": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+          "enabled": true,
+          "textAlign": "left",
+          "statusRect": {
+            "x": 20,
+            "y": 494.9375,
+            "width": 350,
+            "height": 72.25,
+            "top": 494.9375,
+            "right": 370,
+            "bottom": 567.1875,
+            "left": 20
+          },
+          "statusVisible": true
+        },
+        "layout": {
+          "viewportWidth": 390,
+          "documentWidth": 390,
+          "overflow": []
+        }
+      }
+    },
+    {
+      "name": "normal CSP deny 390: clean console",
+      "pass": true,
+      "observed": {
+        "console": [],
+        "errors": [],
+        "failed": []
+      }
+    },
+    {
+      "name": "JS disabled 390: understandable static demo and retained downloads",
+      "pass": true,
+      "observed": {
+        "staticState": {
+          "label": "校样示意",
+          "feedback": "此处是静态校样示意，下载与安装仍可使用。",
+          "inputDisabled": true,
+          "controlsVisible": false,
+          "noscriptText": "启用 JavaScript 后，可修改第三句、演示返修并重置。",
+          "noscriptVisible": true,
+          "groupLabel": "四句示例校样，第三句可编辑",
+          "downloads": [
+            {
+              "type": "dmg",
+              "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+            },
+            {
+              "type": "dmg",
+              "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+            },
+            {
+              "type": "zip",
+              "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+            }
+          ],
+          "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+        },
+        "noJsLayout": {
+          "viewportWidth": 390,
+          "documentWidth": 390,
+          "overflow": []
+        },
+        "logs": {
+          "console": [],
+          "errors": [],
+          "failed": []
+        }
+      }
+    },
+    {
+      "name": "JS enabled 320: initialization label and links",
+      "pass": true,
+      "observed": {
+        "label": "示意 · 仅第三句可编辑",
+        "feedback": "直接改第三句，或点「改一句试试」。Ctrl / ⌘ + Enter 返修，Esc 重置。",
+        "inputDisabled": false,
+        "controlsVisible": true,
+        "noscriptText": "",
+        "noscriptVisible": false,
+        "groupLabel": "四句示例校样，第三句可编辑",
+        "downloads": [
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "zip",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+          }
+        ],
+        "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+      }
+    },
+    {
+      "name": "long guide 320: layout and text rendering",
+      "pass": true,
+      "observed": {
+        "guide": {
+          "viewportWidth": 320,
+          "documentWidth": 320,
+          "overflow": []
+        },
+        "guideDOM": {
+          "visible": true,
+          "stepCount": 4,
+          "paragraphs": [
+            {
+              "text": "安装包自带解释器，模型需单独配置。首次导入需要可用的文稿与语音模型，以及至少一个启用中的音色。按服务商要求准备两类模型的 ID、接口地址和鉴权凭据；使用本机服务时，先让它运行起来。",
+              "scrollWidth": 280,
+              "clientWidth": 280
+            },
+            {
+              "text": "打开「配置」→「文稿」→「添加模型」，选择服务商，核对模型 ID、接口地址与鉴权，点「保存」。回到列表点「校验」，通过后确认是当前模型，需要时点「设为当前」。再到「语音」→「添加模型」，同样保存、校验并指定当前。",
+              "scrollWidth": 256,
+              "clientWidth": 256
+            },
+            {
+              "text": "在「语音」页点「刷新目录」。新拉取的音色默认停用，选一个点「启用」，再「试听」。服务不提供目录时，用「按 id 添加」填写支持的音色 ID。确认至少一个音色已启用且能试听，再继续。",
+              "scrollWidth": 256,
+              "clientWidth": 256
+            },
+            {
+              "text": "回到「书籍」，导入带「第一章」等章题的短 TXT，在校样里点「切章」，选择规则或模型方式。规则切章、拆句本身不调用文稿模型；首次导入仍要求文稿模型可用。",
+              "scrollWidth": 256,
+              "clientWidth": 256
+            },
+            {
+              "text": "未标注的对白先补角色，再为旁白和角色选择已启用的音色，点「合成本章」。先试听已完成的句子，满意后「导出本章」。",
+              "scrollWidth": 256,
+              "clientWidth": 256
+            },
+            {
+              "text": "导入仍不可用时，检查两类当前模型的校验、已启用音色，以及引擎是否运行；引擎停止时按应用横幅提示重启。校验或试听失败，先看失败原因，再检查服务、地址和凭据。远程服务会收到用于合成或拆书的相关文本。",
+              "scrollWidth": 280,
+              "clientWidth": 280
+            }
+          ],
+          "workflow": "首次导入前，先校验并指定当前的文稿与语音模型，再启用至少一个音色。了解模型配置",
+          "installThird": "配好模型，导入书稿文稿、语音模型均需可用，并启用音色，再导入 TXT。按指南完成第一次出声"
+        }
+      }
+    },
+    {
+      "name": "copy allow 320: default sizes",
+      "pass": true,
+      "observed": [
+        {
+          "button": "#copy-command",
+          "width": 65,
+          "height": 44,
+          "label": "复制命令",
+          "minInlineSize": "65px",
+          "textAlign": "left",
+          "focus": ""
+        },
+        {
+          "button": "#copy-checksum",
+          "width": 65,
+          "height": 44,
+          "label": "复制校验值",
+          "minInlineSize": "65px",
+          "textAlign": "left",
+          "focus": ""
+        }
+      ]
+    },
+    {
+      "name": "copy allow 320 #copy-command: feedback dimensions/value",
+      "pass": true,
+      "observed": {
+        "expected": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+        "value": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+        "snapshot": {
+          "width": 65,
+          "height": 44,
+          "label": "已复制",
+          "focus": "copy-command",
+          "status": "命令已复制。请在 Mac 的「终端」粘贴并运行。",
+          "selected": "",
+          "fallback": "",
+          "enabled": true,
+          "textAlign": "left",
+          "statusRect": {
+            "x": 34,
+            "y": 443.21875,
+            "width": 252,
+            "height": 45.5,
+            "top": 443.21875,
+            "right": 286,
+            "bottom": 488.71875,
+            "left": 34
+          },
+          "statusVisible": true
+        },
+        "layout": {
+          "viewportWidth": 320,
+          "documentWidth": 320,
+          "overflow": []
+        }
+      }
+    },
+    {
+      "name": "copy allow 320 #copy-checksum: feedback dimensions/value",
+      "pass": true,
+      "observed": {
+        "expected": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+        "value": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+        "snapshot": {
+          "width": 65,
+          "height": 44,
+          "label": "已复制",
+          "focus": "copy-checksum",
+          "status": "ZIP 校验值已复制。",
+          "selected": "",
+          "fallback": "",
+          "enabled": true,
+          "textAlign": "left",
+          "statusRect": {
+            "x": 20,
+            "y": 442.84375,
+            "width": 280,
+            "height": 22.75,
+            "top": 442.84375,
+            "right": 300,
+            "bottom": 465.59375,
+            "left": 20
+          },
+          "statusVisible": true
+        },
+        "layout": {
+          "viewportWidth": 320,
+          "documentWidth": 320,
+          "overflow": []
+        }
+      }
+    },
+    {
+      "name": "copy allow 320: restored labels/sizes",
+      "pass": true,
+      "observed": [
+        {
+          "button": "#copy-command",
+          "width": 65,
+          "height": 44,
+          "label": "复制命令",
+          "minInlineSize": "65px",
+          "textAlign": "left",
+          "focus": "copy-checksum"
+        },
+        {
+          "button": "#copy-checksum",
+          "width": 65,
+          "height": 44,
+          "label": "复制校验值",
+          "minInlineSize": "65px",
+          "textAlign": "left",
+          "focus": "copy-checksum"
+        }
+      ]
+    },
+    {
+      "name": "normal CSP allow 320: clean console",
+      "pass": true,
+      "observed": {
+        "console": [],
+        "errors": [],
+        "failed": []
+      }
+    },
+    {
+      "name": "copy deny 320: default sizes",
+      "pass": true,
+      "observed": [
+        {
+          "button": "#copy-command",
+          "width": 65,
+          "height": 44,
+          "label": "复制命令",
+          "minInlineSize": "65px",
+          "textAlign": "left",
+          "focus": ""
+        },
+        {
+          "button": "#copy-checksum",
+          "width": 65,
+          "height": 44,
+          "label": "复制校验值",
+          "minInlineSize": "65px",
+          "textAlign": "left",
+          "focus": ""
+        }
+      ]
+    },
+    {
+      "name": "copy deny 320 #copy-command: feedback dimensions/value",
+      "pass": true,
+      "observed": {
+        "expected": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+        "value": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+        "snapshot": {
+          "width": 65,
+          "height": 44,
+          "label": "复制命令",
+          "focus": "copy-command",
+          "status": "自动复制不可用。请手动复制已选中的内容：shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+          "selected": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+          "fallback": "shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+          "enabled": true,
+          "textAlign": "left",
+          "statusRect": {
+            "x": 34,
+            "y": 443.21875,
+            "width": 252,
+            "height": 117.75,
+            "top": 443.21875,
+            "right": 286,
+            "bottom": 560.96875,
+            "left": 34
+          },
+          "statusVisible": true
+        },
+        "layout": {
+          "viewportWidth": 320,
+          "documentWidth": 320,
+          "overflow": []
+        }
+      }
+    },
+    {
+      "name": "copy deny 320 #copy-checksum: feedback dimensions/value",
+      "pass": true,
+      "observed": {
+        "expected": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+        "value": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+        "snapshot": {
+          "width": 65,
+          "height": 44,
+          "label": "复制校验值",
+          "focus": "copy-checksum",
+          "status": "自动复制不可用。请手动复制已选中的内容：e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+          "selected": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+          "fallback": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+          "enabled": true,
+          "textAlign": "left",
+          "statusRect": {
+            "x": 20,
+            "y": 443.09375,
+            "width": 280,
+            "height": 72.25,
+            "top": 443.09375,
+            "right": 300,
+            "bottom": 515.34375,
+            "left": 20
+          },
+          "statusVisible": true
+        },
+        "layout": {
+          "viewportWidth": 320,
+          "documentWidth": 320,
+          "overflow": []
+        }
+      }
+    },
+    {
+      "name": "normal CSP deny 320: clean console",
+      "pass": true,
+      "observed": {
+        "console": [],
+        "errors": [],
+        "failed": []
+      }
+    },
+    {
+      "name": "JS disabled 320: understandable static demo and retained downloads",
+      "pass": true,
+      "observed": {
+        "staticState": {
+          "label": "校样示意",
+          "feedback": "此处是静态校样示意，下载与安装仍可使用。",
+          "inputDisabled": true,
+          "controlsVisible": false,
+          "noscriptText": "启用 JavaScript 后，可修改第三句、演示返修并重置。",
+          "noscriptVisible": true,
+          "groupLabel": "四句示例校样，第三句可编辑",
+          "downloads": [
+            {
+              "type": "dmg",
+              "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+            },
+            {
+              "type": "dmg",
+              "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+            },
+            {
+              "type": "zip",
+              "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+            }
+          ],
+          "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+        },
+        "noJsLayout": {
+          "viewportWidth": 320,
+          "documentWidth": 320,
+          "overflow": []
+        },
+        "logs": {
+          "console": [],
+          "errors": [],
+          "failed": []
+        }
+      }
+    },
+    {
+      "name": "site.js blocked 390: static fallback remains understandable",
+      "pass": true,
+      "observed": {
+        "blockedState": {
+          "label": "校样示意",
+          "feedback": "此处是静态校样示意，下载与安装仍可使用。",
+          "inputDisabled": true,
+          "controlsVisible": false,
+          "noscriptText": "",
+          "noscriptVisible": false,
+          "groupLabel": "四句示例校样，第三句可编辑",
+          "downloads": [
+            {
+              "type": "dmg",
+              "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+            },
+            {
+              "type": "dmg",
+              "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+            },
+            {
+              "type": "zip",
+              "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+            }
+          ],
+          "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+        },
+        "blockedLayout": {
+          "viewportWidth": 390,
+          "documentWidth": 390,
+          "overflow": []
+        },
+        "logs": {
+          "console": [
+            {
+              "type": "error",
+              "text": "Failed to load resource: net::ERR_FAILED",
+              "location": {
+                "url": "http://127.0.0.1:4173/site.js",
+                "line": 0,
+                "column": 0,
+                "lineNumber": 0,
+                "columnNumber": 0
+              }
+            }
+          ],
+          "errors": [],
+          "failed": [
+            {
+              "url": "http://127.0.0.1:4173/site.js",
+              "reason": "net::ERR_FAILED"
+            }
+          ]
+        },
+        "expectedFault": "Exactly one site.js resource load failure; not counted as a product console regression."
+      }
+    }
+  ],
+  "errors": [],
+  "finished": "2026-10-01T03:03:39.044Z"
+}

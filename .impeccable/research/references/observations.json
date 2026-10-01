@@ -1,0 +1,192 @@
+{
+  "capturedOn": "2026-09-30",
+  "method": "Public pages rendered in Chromium at 1440 × 1000; mobile baseline 390 × 844. Titles, headings, links and overflow captured from DOM. Screenshots are analysis references, not site UI assets.",
+  "pages": [
+    {
+      "id": "elevenlabs",
+      "url": "https://elevenlabs.io/studio",
+      "title": "Studio 4.0 - AI audio and video editor for creators",
+      "h1": [
+        "The best AI audio models in one powerful agentic editor"
+      ],
+      "h2": [
+        "Create immersive experiences with Studio 4.0 — from podcasts and audiobooks to videos. Enhance your content with AI voices, music, and captions, all in one editor.",
+        "Studio Agent: Your AI co-editor",
+        "All your creative tools, in one seamless timeline",
+        "Built for every creator",
+        "Everything in Studio, available through our API",
+        "Studio Pricing",
+        "Frequently asked questions"
+      ],
+      "links": [
+        {
+          "text": "Try Studio for free",
+          "url": "https://elevenlabs.io/app/studio"
+        }
+      ],
+      "overflow": 0
+    },
+    {
+      "id": "descript",
+      "url": "https://www.descript.com/tools/text-to-speech",
+      "title": "Free Text-to-Speech Voice Generator (AI) | Descript",
+      "h1": [
+        "Text-to-Speech Voice Generator"
+      ],
+      "h2": [
+        "How to turn text into realistic AI voice audio",
+        "Turn what you type into lifelike speech with AI",
+        "More than a text-to-speech generator",
+        "Don’t just take our word for it",
+        "PRICING",
+        "DISCOVER MORE",
+        "Questions? We have answers"
+      ],
+      "links": [
+        {
+          "text": "Download",
+          "url": "https://www.descript.com/download"
+        }
+      ],
+      "overflow": 0
+    },
+    {
+      "id": "speechify",
+      "url": "https://speechify.com/studio/",
+      "title": "Speechify Studio | #1 AI Video, Voice, Slides & Dubbing | Speechify",
+      "h1": [
+        "The #1 AI Studio"
+      ],
+      "h2": [
+        "Featured In",
+        "Speechify Studio is the first cohesive AI suite for creators",
+        "Experience it for yourself",
+        "Here’s just a small taste of what you’ll be able to do with Speechify Studio.",
+        "Large selection of male and female voices with all kinds of accents",
+        "Speechify Studio is for teams of all sizes",
+        "Discover More",
+        "Speechify Text to Speech API"
+      ],
+      "links": [
+        {
+          "text": "Download",
+          "url": "https://speechify.com/download/"
+        },
+        {
+          "text": "Try For Free",
+          "url": "https://studio.speechify.com/onboarding"
+        },
+        {
+          "text": "Launch Studio",
+          "url": "https://studio.speechify.com/onboarding"
+        },
+        {
+          "text": "Launch Studio",
+          "url": "https://studio.speechify.com/onboarding"
+        },
+        {
+          "text": "Launch Studio",
+          "url": "https://studio.speechify.com/onboarding"
+        },
+        {
+          "text": "Download",
+          "url": "https://speechify.com/download/"
+        }
+      ],
+      "overflow": 0
+    },
+    {
+      "id": "superwhisper",
+      "url": "https://superwhisper.com/",
+      "title": "Superwhisper — AI Voice to Text for macOS, Windows, iOS & Android | Superwhisper",
+      "h1": [
+        "Adaptability"
+      ],
+      "h2": [
+        "Used by those who move fast",
+        "Communication isn't one-size-fits-all",
+        "Also available on mobile",
+        "Also available on mobile"
+      ],
+      "links": [
+        {
+          "text": "Download",
+          "url": "https://superwhisper.com/download"
+        },
+        {
+          "text": "Download",
+          "url": "https://superwhisper.com/download"
+        }
+      ],
+      "overflow": 0
+    },
+    {
+      "id": "before-desktop",
+      "url": "http://127.0.0.1:4173/",
+      "title": "成声 — 本机有声书校样台",
+      "h1": [
+        "改一句，听一句。"
+      ],
+      "h2": [],
+      "links": [
+        {
+          "text": "跳到下载",
+          "url": "http://127.0.0.1:4173/#download"
+        },
+        {
+          "text": "下载",
+          "url": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+        }
+      ],
+      "overflow": 0
+    },
+    {
+      "id": "voiceink",
+      "url": "https://tryvoiceink.com/",
+      "title": "VoiceInk: The Best Dictation App for macOS",
+      "h1": [
+        "Write at thespeed of thought"
+      ],
+      "h2": [
+        "Works Across All Apps",
+        "Reply to emails 5× faster",
+        "Chat with AI apps 5× faster",
+        "They said it better than we could.",
+        "Buy once. Own forever.",
+        "Everything you might ask",
+        "Open Source & Privacy-First"
+      ],
+      "links": [
+        {
+          "text": "Download for Mac",
+          "url": "https://tryvoiceink.com/download"
+        },
+        {
+          "text": "Download for iOS",
+          "url": "https://tryvoiceink.com/ios"
+        }
+      ],
+      "overflow": 0
+    },
+    {
+      "id": "before-mobile",
+      "url": "http://127.0.0.1:4173/",
+      "title": "成声 — 本机有声书校样台",
+      "h1": [
+        "改一句，听一句。"
+      ],
+      "h2": [],
+      "links": [
+        {
+          "text": "跳到下载",
+          "url": "http://127.0.0.1:4173/#download"
+        },
+        {
+          "text": "下载",
+          "url": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+        }
+      ],
+      "overflow": 0
+    }
+  ]
+}

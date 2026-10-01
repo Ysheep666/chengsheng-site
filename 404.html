@@ -3,25 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>没有这一页 — 成声</title>
+    <title>页面不存在 — 成声</title>
     <meta name="robots" content="noindex" />
-    <meta name="theme-color" content="#f7f4ec" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
-    />
+    <meta name="theme-color" content="#f7f5f0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'" />
     <link rel="icon" href="/icon.png" type="image/png" sizes="512x512" />
     <link rel="apple-touch-icon" href="/icon.png" />
     <link rel="stylesheet" href="/site.css" />
   </head>
-  <body>
-    <main>
-      <img class="mark" src="/icon.png" width="48" height="48" alt="" />
-      <h1>没有这一页</h1>
-      <p class="lede">地址不对，或这一页已经撤下。</p>
-      <div class="actions">
-        <a class="btn ink" href="/">回成声首页</a>
-      </div>
-    </main>
+  <body class="not-found-page">
+    <a class="skip" href="#main">跳到正文</a>
+    <header class="site-header"><div class="wrap header-inner"><a class="brand" href="/"><img src="/icon.png" alt="" width="34" height="34" /><span>成声</span></a></div></header>
+    <main id="main" class="not-found wrap"><p class="error-code">404</p><h1>页面不存在。</h1><p>页面可能已移动，或地址有误。</p><div class="hero-actions"><a class="button button-primary" href="/">回到首页</a><a class="text-link" href="https://github.com/Ysheep666/chengsheng-site/releases">查看版本记录<svg class="icon icon-small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" /></svg></a></div></main>
   </body>
 </html>

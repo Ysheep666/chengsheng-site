@@ -1,0 +1,2645 @@
+{
+  "assessment": "Final B bounded confirmation",
+  "independence": "No A or other reports read; no scoring; only announced repair scope and completion timing received",
+  "resolved": [
+    {
+      "id": "B-01",
+      "status": "resolved",
+      "detail": "首页三宽度、404三宽度的品牌点击高度均44px；新setup-note配置链接44px；所有可见剩余目标均通过44×44px检查。旧workflow-note不存在。"
+    }
+  ],
+  "issues": [
+    {
+      "id": "B-final-01",
+      "severity": "P2",
+      "title": "先点击ZIP后，feed成功仍保留首屏“正在检查新版”",
+      "location": "site.js startRelease(): load() success branches and clickedStatus routing; index.html #status / #zip-status",
+      "reproduction": [
+        "用route暂缓latest-mac.json响应",
+        "点击页脚ZIP，小fixture下载成功，页脚正确显示“已打开 ZIP 下载链接”",
+        "返回合法v0.0.8 feed，三条href及版本更新，页脚正确显示新版本竞态警告",
+        "首屏#status仍为“正在检查新版，当前安装包可下载。”"
+      ],
+      "evidence": [
+        {
+          "fixture": {
+            "filename": "Chengsheng-0.0.7-arm64.zip",
+            "url": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+          },
+          "initialZipStatus": "已打开 ZIP 下载链接。进度请查看浏览器下载列表。",
+          "finalZipStatus": "已打开 ZIP 下载链接。进度请查看浏览器下载列表。",
+          "heroStatus": "正在检查新版，当前安装包可下载。",
+          "links": [
+            {
+              "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+              "type": "dmg",
+              "text": "下载 Mac 版",
+              "describedby": "platform-limit"
+            },
+            {
+              "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+              "type": "dmg",
+              "text": "下载 Mac 版",
+              "describedby": "platform-limit"
+            },
+            {
+              "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip",
+              "type": "zip",
+              "text": "ZIP 备用包",
+              "describedby": "platform-limit"
+            }
+          ],
+          "screenshot": "/tmp/chengsheng-copy-refinement/b-final-zip-race-current-320.png"
+        },
+        {
+          "fixture": {
+            "filename": "Chengsheng-0.0.7-arm64.zip",
+            "url": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+          },
+          "initialZipStatus": "已打开 ZIP 下载链接。进度请查看浏览器下载列表。",
+          "finalZipStatus": "下载链接已更新为 v0.0.8。你刚才打开的是 v0.0.7，可重新下载。",
+          "heroStatus": "正在检查新版，当前安装包可下载。",
+          "links": [
+            {
+              "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.8/Chengsheng-0.0.8-arm64.dmg",
+              "type": "dmg",
+              "text": "下载 Mac 版",
+              "describedby": "platform-limit"
+            },
+            {
+              "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.8/Chengsheng-0.0.8-arm64.dmg",
+              "type": "dmg",
+              "text": "下载 Mac 版",
+              "describedby": "platform-limit"
+            },
+            {
+              "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.8/Chengsheng-0.0.8-arm64.zip",
+              "type": "zip",
+              "text": "ZIP 备用包",
+              "describedby": "platform-limit"
+            }
+          ],
+          "screenshot": "/tmp/chengsheng-copy-refinement/b-final-zip-race-newer-320.png"
+        }
+      ],
+      "impact": "版本检查已经完成，首屏仍宣称检查中；页脚新版本提示与首屏进度状态矛盾。安装包链接及下载不受影响。",
+      "rootCause": "clickedVersion存在时成功分支只写clickedStatus；ZIP使clickedStatus改为#zip-status，因此原#status的loading文本未清理。相同版本分支亦不清理。",
+      "recommendation": "feed成功且clickedStatus不是首屏status时，清理首屏status原loading文本，再保留对clickedStatus的原就近提示；避免抹去DMG自己的下载反馈。",
+      "currentCaseEvidenceLimit": "相同版本断言本身没有等待version变化，不能独自证明fetch结束；源代码分支分析和v0.0.8已更新的第二案例足以确认问题。"
+    }
+  ],
+  "nonSubstantiveMeasurementNotes": {
+    "count": 4,
+    "failedCases": [
+      "home 1440: ZIP feedback is local to footer",
+      "home 390: ZIP feedback is local to footer",
+      "home 320: repeated setup anchor and expanded guide layout",
+      "home 320: ZIP feedback is local to footer"
+    ],
+    "measurement": "打开FAQ时summary及faq容器的scrollWidth比clientWidth多3–4px，document scrollWidth始终没有超视口。",
+    "interpretation": "与17px加号SVG旋转45deg的外接尺寸一致（单侧约3.52px）。这是对变换后的图标框的严格元素scrollWidth告警，不是已确认文字裁切或页面横向滚动；无需按文案溢出修复。该归因是结合DOM数值与现有CSS的推断。",
+    "zipCoverage": "三条ZIP检查均已先通过下载fixture、页脚文字、首屏status为空及反馈在footer边界内的断言，随后才在无关FAQ的严格overflow断言处失败。"
+  },
+  "method": {
+    "browserPasses": 1,
+    "viewports": [
+      1440,
+      390,
+      320
+    ],
+    "detectorRerun": false,
+    "overlayAttempted": false,
+    "axeRerun": false,
+    "fullPreviousSuiteRerun": false,
+    "sourceEdits": false,
+    "serverChanges": false
+  },
+  "results": {
+    "method": "One bounded final Assessment B confirmation of announced changes; no detector, overlay, full 81 checks or axe rerun",
+    "startedAt": "2026-10-01T07:08:14.120Z",
+    "checks": [
+      {
+        "name": "home 1440: target sizes, static structure, normal feed and compact copy",
+        "pass": true,
+        "evidence": {
+          "dom": {
+            "viewport": 1440,
+            "scrollWidth": 1440,
+            "controls": [
+              {
+                "selector": "brand",
+                "text": "成声",
+                "width": 95.5,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "制书流程",
+                "width": 56,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "书稿与模型",
+                "width": 70,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "常见问题",
+                "width": 56,
+                "height": 44
+              },
+              {
+                "selector": "button button-small button-ink",
+                "text": "下载 Mac 版",
+                "width": 130.96875,
+                "height": 44
+              },
+              {
+                "selector": "#download-dmg",
+                "text": "下载 Mac 版",
+                "width": 180,
+                "height": 48
+              },
+              {
+                "selector": "text-link",
+                "text": "试改一句",
+                "width": 88,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "配置指南",
+                "width": 52,
+                "height": 44
+              },
+              {
+                "selector": "#demo-sentence",
+                "text": "门没关严。",
+                "width": 660,
+                "height": 44
+              },
+              {
+                "selector": "#edit-demo",
+                "text": "换个例句",
+                "width": 105,
+                "height": 44
+              },
+              {
+                "selector": "#render-demo",
+                "text": "演示返修",
+                "width": 140,
+                "height": 44
+              },
+              {
+                "selector": "#reset-demo",
+                "text": "重置示例",
+                "width": 58,
+                "height": 44
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "怎样完成第一次出声？",
+                "width": 586.5,
+                "height": 66
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "能导出哪些音频？",
+                "width": 586.5,
+                "height": 66
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "怎样安装和更新？",
+                "width": 586.5,
+                "height": 66
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "下载失败怎么办？",
+                "width": 586.5,
+                "height": 66
+              },
+              {
+                "selector": "brand",
+                "text": "成声",
+                "width": 81.265625,
+                "height": 44
+              },
+              {
+                "selector": "#download-zip",
+                "text": "ZIP 备用包",
+                "width": 58.15625,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "版本记录",
+                "width": 48,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "回到顶部",
+                "width": 72,
+                "height": 44
+              }
+            ],
+            "shortControls": [],
+            "missing": [],
+            "overflow": [],
+            "links": [
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+                "type": "dmg",
+                "text": "下载 Mac 版",
+                "describedby": "platform-limit"
+              },
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+                "type": "dmg",
+                "text": "下载 Mac 版",
+                "describedby": "platform-limit"
+              },
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip",
+                "type": "zip",
+                "text": "ZIP 备用包",
+                "describedby": "platform-limit"
+              }
+            ],
+            "removedCount": 0,
+            "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+          },
+          "feedback": "修改第三句后，点「演示返修」。Ctrl / ⌘ + Enter 返修，Esc 重置。",
+          "table": {
+            "headerAriaHidden": "true",
+            "stateHeaderDisplay": "block",
+            "rows": [
+              {
+                "columns": "26px 62px 660px 72px",
+                "stateColumn": "auto",
+                "text": {
+                  "x": 498,
+                  "y": 699.015625,
+                  "width": 660,
+                  "bottom": 728.703125
+                },
+                "state": {
+                  "x": 1168,
+                  "y": 702.484375,
+                  "width": 72
+                }
+              },
+              {
+                "columns": "26px 62px 660px 72px",
+                "stateColumn": "auto",
+                "text": {
+                  "x": 498,
+                  "y": 751.015625,
+                  "width": 660,
+                  "bottom": 780.703125
+                },
+                "state": {
+                  "x": 1168,
+                  "y": 754.484375,
+                  "width": 72
+                }
+              },
+              {
+                "columns": "26px 62px 660px 72px",
+                "stateColumn": "auto",
+                "text": {
+                  "x": 498,
+                  "y": 800.359375,
+                  "width": 660,
+                  "bottom": 866.359375
+                },
+                "state": {
+                  "x": 1168,
+                  "y": 821.984375,
+                  "width": 72
+                }
+              },
+              {
+                "columns": "26px 62px 660px 72px",
+                "stateColumn": "auto",
+                "text": {
+                  "x": 498,
+                  "y": 886.515625,
+                  "width": 660,
+                  "bottom": 916.203125
+                },
+                "state": {
+                  "x": 1168,
+                  "y": 889.984375,
+                  "width": 72
+                }
+              }
+            ]
+          },
+          "screenshot": "/tmp/chengsheng-copy-refinement/b-final-home-1440.png"
+        }
+      },
+      {
+        "name": "home 1440: long sentence and preserved keyboard actions",
+        "pass": true,
+        "evidence": {
+          "layouts": [
+            {
+              "rows": 2,
+              "valueLength": 56,
+              "height": 71,
+              "scrollHeight": 71,
+              "width": 660,
+              "scrollWidth": 660
+            },
+            {
+              "rows": 2,
+              "valueLength": 56,
+              "height": 71,
+              "scrollHeight": 71,
+              "width": 660,
+              "scrollWidth": 660
+            }
+          ],
+          "changedFeedback": "第 3 句已改。点「演示返修」。也可按 Ctrl / ⌘ + Enter。",
+          "screenshot": "/tmp/chengsheng-copy-refinement/b-final-long-1440.png",
+          "keyboardConfirmed": false
+        }
+      },
+      {
+        "name": "home 1440: repeated setup anchor and expanded guide layout",
+        "pass": true,
+        "evidence": {
+          "hash": "#model-help",
+          "guide": {
+            "directParagraphs": [
+              "先准备文稿模型（用于拆书）和语音模型（用于出声）的服务配置。本机模型需先启动服务。",
+              "首次导入需要两类当前模型可用、至少一个已启用音色，以及运行中的成声引擎。引擎是应用的处理进程，与模型服务不同。",
+              "导入不可用时，检查两类当前模型、已启用音色和引擎状态。引擎停止时，按应用提示重启；校验或试听失败时，按错误提示检查服务、地址和凭据。"
+            ],
+            "steps": 4,
+            "checks": [
+              "确认：两类模型都通过校验，并显示为当前。",
+              "确认：至少一个音色已启用，且试听成功。"
+            ]
+          },
+          "dom": {
+            "viewport": 1440,
+            "scrollWidth": 1440,
+            "controls": [
+              {
+                "selector": "brand",
+                "text": "成声",
+                "width": 95.5,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "制书流程",
+                "width": 56,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "书稿与模型",
+                "width": 70,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "常见问题",
+                "width": 56,
+                "height": 44
+              },
+              {
+                "selector": "button button-small button-ink",
+                "text": "下载 Mac 版",
+                "width": 130.96875,
+                "height": 44
+              },
+              {
+                "selector": "#download-dmg",
+                "text": "下载 Mac 版",
+                "width": 180,
+                "height": 48
+              },
+              {
+                "selector": "text-link",
+                "text": "试改一句",
+                "width": 88,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "配置指南",
+                "width": 52,
+                "height": 44
+              },
+              {
+                "selector": "#demo-sentence",
+                "text": "门没关严。",
+                "width": 660,
+                "height": 44
+              },
+              {
+                "selector": "#edit-demo",
+                "text": "换个例句",
+                "width": 105,
+                "height": 44
+              },
+              {
+                "selector": "#render-demo",
+                "text": "演示返修",
+                "width": 140,
+                "height": 44
+              },
+              {
+                "selector": "#reset-demo",
+                "text": "重置示例",
+                "width": 58,
+                "height": 44
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "怎样完成第一次出声？",
+                "width": 586.5,
+                "height": 66
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "能导出哪些音频？",
+                "width": 586.5,
+                "height": 66
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "怎样安装和更新？",
+                "width": 586.5,
+                "height": 66
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "下载失败怎么办？",
+                "width": 586.5,
+                "height": 66
+              },
+              {
+                "selector": "brand",
+                "text": "成声",
+                "width": 81.265625,
+                "height": 44
+              },
+              {
+                "selector": "#download-zip",
+                "text": "ZIP 备用包",
+                "width": 58.15625,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "版本记录",
+                "width": 48,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "回到顶部",
+                "width": 72,
+                "height": 44
+              }
+            ],
+            "shortControls": [],
+            "missing": [],
+            "overflow": [],
+            "links": [
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+                "type": "dmg",
+                "text": "下载 Mac 版",
+                "describedby": "platform-limit"
+              },
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+                "type": "dmg",
+                "text": "下载 Mac 版",
+                "describedby": "platform-limit"
+              },
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip",
+                "type": "zip",
+                "text": "ZIP 备用包",
+                "describedby": "platform-limit"
+              }
+            ],
+            "removedCount": 0,
+            "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+          }
+        }
+      },
+      {
+        "name": "home 1440: ZIP feedback is local to footer",
+        "pass": false,
+        "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   {\n+     element: 'faq',\n+     scrollWidth: 1124,\n+     text: '常见问题\\n        \\n          使用与导出\\n          怎样完成第一次出声？\\n         ',\n+     width: 1120\n+   },\n+   {\n+     element: 'SUMMARY',\n+     scrollWidth: 590,\n+     text: '怎样完成第一次出声？',\n+     width: 587\n+   }\n+ ]\n- []\n\n    at basic (/private/tmp/chengsheng-copy-refinement/assessment-b-final-browser.cjs:31:133)\n    at /private/tmp/chengsheng-copy-refinement/assessment-b-final-browser.cjs:54:698\n    at async check (/private/tmp/chengsheng-copy-refinement/assessment-b-final-browser.cjs:12:50)\n    at async /private/tmp/chengsheng-copy-refinement/assessment-b-final-browser.cjs:53:3"
+      },
+      {
+        "name": "404 1440: brand target shared fix",
+        "pass": true,
+        "evidence": {
+          "viewport": 1440,
+          "scrollWidth": 1440,
+          "controls": [
+            {
+              "selector": "brand",
+              "text": "成声",
+              "width": 95.5,
+              "height": 44
+            },
+            {
+              "selector": "button button-primary",
+              "text": "回到首页",
+              "width": 180,
+              "height": 48
+            },
+            {
+              "selector": "text-link",
+              "text": "查看版本记录",
+              "width": 118,
+              "height": 44
+            }
+          ],
+          "shortControls": [],
+          "missing": [],
+          "overflow": [],
+          "links": [],
+          "removedCount": 0,
+          "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+        }
+      },
+      {
+        "name": "home 390: target sizes, static structure, normal feed and compact copy",
+        "pass": true,
+        "evidence": {
+          "dom": {
+            "viewport": 390,
+            "scrollWidth": 390,
+            "controls": [
+              {
+                "selector": "brand",
+                "text": "成声",
+                "width": 80.328125,
+                "height": 44
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "导航",
+                "width": 58,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "校样示例",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "制书流程",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "书稿与模型",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "常见问题",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "button button-small button-ink",
+                "text": "下载 Mac 版",
+                "width": 95.96875,
+                "height": 44
+              },
+              {
+                "selector": "#download-dmg",
+                "text": "下载 Mac 版",
+                "width": 164,
+                "height": 48
+              },
+              {
+                "selector": "text-link",
+                "text": "试改一句",
+                "width": 80,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "配置指南",
+                "width": 52,
+                "height": 44
+              },
+              {
+                "selector": "#demo-sentence",
+                "text": "门没关严。",
+                "width": 186,
+                "height": 44
+              },
+              {
+                "selector": "#edit-demo",
+                "text": "换个例句",
+                "width": 98,
+                "height": 44
+              },
+              {
+                "selector": "#render-demo",
+                "text": "演示返修",
+                "width": 140,
+                "height": 44
+              },
+              {
+                "selector": "#reset-demo",
+                "text": "重置示例",
+                "width": 58,
+                "height": 44
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "怎样完成第一次出声？",
+                "width": 350,
+                "height": 62
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "能导出哪些音频？",
+                "width": 350,
+                "height": 62
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "怎样安装和更新？",
+                "width": 350,
+                "height": 62
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "下载失败怎么办？",
+                "width": 350,
+                "height": 62
+              },
+              {
+                "selector": "brand",
+                "text": "成声",
+                "width": 78.265625,
+                "height": 44
+              },
+              {
+                "selector": "#download-zip",
+                "text": "ZIP 备用包",
+                "width": 53.5625,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "版本记录",
+                "width": 44,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "回到顶部",
+                "width": 68,
+                "height": 44
+              }
+            ],
+            "shortControls": [],
+            "missing": [],
+            "overflow": [],
+            "links": [
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+                "type": "dmg",
+                "text": "下载 Mac 版",
+                "describedby": "platform-limit"
+              },
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+                "type": "dmg",
+                "text": "下载 Mac 版",
+                "describedby": "platform-limit"
+              },
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip",
+                "type": "zip",
+                "text": "ZIP 备用包",
+                "describedby": "platform-limit"
+              }
+            ],
+            "removedCount": 0,
+            "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+          },
+          "feedback": "修改第三句后，点「演示返修」。",
+          "table": {
+            "headerAriaHidden": "true",
+            "stateHeaderDisplay": "block",
+            "rows": [
+              {
+                "columns": "16px 34px 186px 60px",
+                "stateColumn": "auto",
+                "text": {
+                  "x": 100,
+                  "y": 655.671875,
+                  "width": 186,
+                  "bottom": 682.0625
+                },
+                "state": {
+                  "x": 292,
+                  "y": 657.5,
+                  "width": 60
+                }
+              },
+              {
+                "columns": "16px 34px 186px 60px",
+                "stateColumn": "auto",
+                "text": {
+                  "x": 100,
+                  "y": 717.671875,
+                  "width": 186,
+                  "bottom": 744.0625
+                },
+                "state": {
+                  "x": 292,
+                  "y": 719.5,
+                  "width": 60
+                }
+              },
+              {
+                "columns": "16px 34px 186px 60px",
+                "stateColumn": "auto",
+                "text": {
+                  "x": 100,
+                  "y": 771.375,
+                  "width": 186,
+                  "bottom": 837.375
+                },
+                "state": {
+                  "x": 292,
+                  "y": 793,
+                  "width": 60
+                }
+              },
+              {
+                "columns": "16px 34px 186px 60px",
+                "stateColumn": "auto",
+                "text": {
+                  "x": 100,
+                  "y": 865.171875,
+                  "width": 186,
+                  "bottom": 891.5625
+                },
+                "state": {
+                  "x": 292,
+                  "y": 867,
+                  "width": 60
+                }
+              }
+            ]
+          },
+          "screenshot": "/tmp/chengsheng-copy-refinement/b-final-home-390.png"
+        }
+      },
+      {
+        "name": "home 390: long sentence and preserved keyboard actions",
+        "pass": true,
+        "evidence": {
+          "layouts": [
+            {
+              "rows": 6,
+              "valueLength": 56,
+              "height": 170,
+              "scrollHeight": 170,
+              "width": 186,
+              "scrollWidth": 186
+            },
+            {
+              "rows": 6,
+              "valueLength": 56,
+              "height": 170,
+              "scrollHeight": 170,
+              "width": 186,
+              "scrollWidth": 186
+            }
+          ],
+          "changedFeedback": "第 3 句已改。点「演示返修」。",
+          "screenshot": "/tmp/chengsheng-copy-refinement/b-final-long-390.png",
+          "keyboardConfirmed": false
+        }
+      },
+      {
+        "name": "home 390: repeated setup anchor and expanded guide layout",
+        "pass": true,
+        "evidence": {
+          "hash": "#model-help",
+          "guide": {
+            "directParagraphs": [
+              "先准备文稿模型（用于拆书）和语音模型（用于出声）的服务配置。本机模型需先启动服务。",
+              "首次导入需要两类当前模型可用、至少一个已启用音色，以及运行中的成声引擎。引擎是应用的处理进程，与模型服务不同。",
+              "导入不可用时，检查两类当前模型、已启用音色和引擎状态。引擎停止时，按应用提示重启；校验或试听失败时，按错误提示检查服务、地址和凭据。"
+            ],
+            "steps": 4,
+            "checks": [
+              "确认：两类模型都通过校验，并显示为当前。",
+              "确认：至少一个音色已启用，且试听成功。"
+            ]
+          },
+          "dom": {
+            "viewport": 390,
+            "scrollWidth": 390,
+            "controls": [
+              {
+                "selector": "brand",
+                "text": "成声",
+                "width": 80.328125,
+                "height": 44
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "导航",
+                "width": 58,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "校样示例",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "制书流程",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "书稿与模型",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "常见问题",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "button button-small button-ink",
+                "text": "下载 Mac 版",
+                "width": 95.96875,
+                "height": 44
+              },
+              {
+                "selector": "#download-dmg",
+                "text": "下载 Mac 版",
+                "width": 164,
+                "height": 48
+              },
+              {
+                "selector": "text-link",
+                "text": "试改一句",
+                "width": 80,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "配置指南",
+                "width": 52,
+                "height": 44
+              },
+              {
+                "selector": "#demo-sentence",
+                "text": "门没关严。",
+                "width": 186,
+                "height": 44
+              },
+              {
+                "selector": "#edit-demo",
+                "text": "换个例句",
+                "width": 98,
+                "height": 44
+              },
+              {
+                "selector": "#render-demo",
+                "text": "演示返修",
+                "width": 140,
+                "height": 44
+              },
+              {
+                "selector": "#reset-demo",
+                "text": "重置示例",
+                "width": 58,
+                "height": 44
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "怎样完成第一次出声？",
+                "width": 350,
+                "height": 62
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "能导出哪些音频？",
+                "width": 350,
+                "height": 62
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "怎样安装和更新？",
+                "width": 350,
+                "height": 62
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "下载失败怎么办？",
+                "width": 350,
+                "height": 62
+              },
+              {
+                "selector": "brand",
+                "text": "成声",
+                "width": 78.265625,
+                "height": 44
+              },
+              {
+                "selector": "#download-zip",
+                "text": "ZIP 备用包",
+                "width": 53.5625,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "版本记录",
+                "width": 44,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "回到顶部",
+                "width": 68,
+                "height": 44
+              }
+            ],
+            "shortControls": [],
+            "missing": [],
+            "overflow": [],
+            "links": [
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+                "type": "dmg",
+                "text": "下载 Mac 版",
+                "describedby": "platform-limit"
+              },
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+                "type": "dmg",
+                "text": "下载 Mac 版",
+                "describedby": "platform-limit"
+              },
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip",
+                "type": "zip",
+                "text": "ZIP 备用包",
+                "describedby": "platform-limit"
+              }
+            ],
+            "removedCount": 0,
+            "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+          }
+        }
+      },
+      {
+        "name": "home 390: ZIP feedback is local to footer",
+        "pass": false,
+        "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   {\n+     element: 'faq',\n+     scrollWidth: 354,\n+     text: '常见问题\\n        \\n          使用与导出\\n          怎样完成第一次出声？\\n         ',\n+     width: 350\n+   },\n+   {\n+     element: 'SUMMARY',\n+     scrollWidth: 354,\n+     text: '怎样完成第一次出声？',\n+     width: 350\n+   }\n+ ]\n- []\n\n    at basic (/private/tmp/chengsheng-copy-refinement/assessment-b-final-browser.cjs:31:133)\n    at /private/tmp/chengsheng-copy-refinement/assessment-b-final-browser.cjs:54:698\n    at async check (/private/tmp/chengsheng-copy-refinement/assessment-b-final-browser.cjs:12:50)\n    at async /private/tmp/chengsheng-copy-refinement/assessment-b-final-browser.cjs:53:3"
+      },
+      {
+        "name": "404 390: brand target shared fix",
+        "pass": true,
+        "evidence": {
+          "viewport": 390,
+          "scrollWidth": 390,
+          "controls": [
+            {
+              "selector": "brand",
+              "text": "成声",
+              "width": 80.328125,
+              "height": 44
+            },
+            {
+              "selector": "button button-primary",
+              "text": "回到首页",
+              "width": 164,
+              "height": 48
+            },
+            {
+              "selector": "text-link",
+              "text": "查看版本记录",
+              "width": 106,
+              "height": 44
+            }
+          ],
+          "shortControls": [],
+          "missing": [],
+          "overflow": [],
+          "links": [],
+          "removedCount": 0,
+          "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+        }
+      },
+      {
+        "name": "home 320: target sizes, static structure, normal feed and compact copy",
+        "pass": true,
+        "evidence": {
+          "dom": {
+            "viewport": 320,
+            "scrollWidth": 320,
+            "controls": [
+              {
+                "selector": "brand",
+                "text": "成声",
+                "width": 80.328125,
+                "height": 44
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "导航",
+                "width": 52,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "校样示例",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "制书流程",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "书稿与模型",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "常见问题",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "button button-small button-ink",
+                "text": "下载 Mac 版",
+                "width": 95.96875,
+                "height": 44
+              },
+              {
+                "selector": "#download-dmg",
+                "text": "下载 Mac 版",
+                "width": 182,
+                "height": 48
+              },
+              {
+                "selector": "text-link",
+                "text": "试改一句",
+                "width": 80,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "配置指南",
+                "width": 52,
+                "height": 44
+              },
+              {
+                "selector": "#demo-sentence",
+                "text": "门没关严。",
+                "width": 190,
+                "height": 44
+              },
+              {
+                "selector": "#edit-demo",
+                "text": "换个例句",
+                "width": 70,
+                "height": 44
+              },
+              {
+                "selector": "#render-demo",
+                "text": "演示返修",
+                "width": 140,
+                "height": 44
+              },
+              {
+                "selector": "#reset-demo",
+                "text": "重置示例",
+                "width": 58,
+                "height": 44
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "怎样完成第一次出声？",
+                "width": 280,
+                "height": 62
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "能导出哪些音频？",
+                "width": 280,
+                "height": 62
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "怎样安装和更新？",
+                "width": 280,
+                "height": 62
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "下载失败怎么办？",
+                "width": 280,
+                "height": 62
+              },
+              {
+                "selector": "brand",
+                "text": "成声",
+                "width": 78.265625,
+                "height": 44
+              },
+              {
+                "selector": "#download-zip",
+                "text": "ZIP 备用包",
+                "width": 53.5625,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "版本记录",
+                "width": 44,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "回到顶部",
+                "width": 68,
+                "height": 44
+              }
+            ],
+            "shortControls": [],
+            "missing": [],
+            "overflow": [],
+            "links": [
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+                "type": "dmg",
+                "text": "下载 Mac 版",
+                "describedby": "platform-limit"
+              },
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+                "type": "dmg",
+                "text": "下载 Mac 版",
+                "describedby": "platform-limit"
+              },
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip",
+                "type": "zip",
+                "text": "ZIP 备用包",
+                "describedby": "platform-limit"
+              }
+            ],
+            "removedCount": 0,
+            "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+          },
+          "feedback": "修改第三句后，点「演示返修」。",
+          "table": {
+            "headerAriaHidden": "true",
+            "stateHeaderDisplay": "none",
+            "rows": [
+              {
+                "columns": "14px 30px 190px",
+                "stateColumn": "3",
+                "text": {
+                  "x": 92,
+                  "y": 699.15625,
+                  "width": 190,
+                  "bottom": 725.546875
+                },
+                "state": {
+                  "x": 92,
+                  "y": 730.546875,
+                  "width": 190
+                }
+              },
+              {
+                "columns": "14px 30px 190px",
+                "stateColumn": "3",
+                "text": {
+                  "x": 92,
+                  "y": 772.296875,
+                  "width": 190,
+                  "bottom": 798.6875
+                },
+                "state": {
+                  "x": 92,
+                  "y": 803.6875,
+                  "width": 190
+                }
+              },
+              {
+                "columns": "14px 30px 190px",
+                "stateColumn": "3",
+                "text": {
+                  "x": 92,
+                  "y": 845.4375,
+                  "width": 190,
+                  "bottom": 911.4375
+                },
+                "state": {
+                  "x": 92,
+                  "y": 916.4375,
+                  "width": 190
+                }
+              },
+              {
+                "columns": "14px 30px 190px",
+                "stateColumn": "3",
+                "text": {
+                  "x": 92,
+                  "y": 958.1875,
+                  "width": 190,
+                  "bottom": 984.578125
+                },
+                "state": {
+                  "x": 92,
+                  "y": 989.578125,
+                  "width": 190
+                }
+              }
+            ]
+          },
+          "screenshot": "/tmp/chengsheng-copy-refinement/b-final-home-320.png"
+        }
+      },
+      {
+        "name": "home 320: long sentence and preserved keyboard actions",
+        "pass": true,
+        "evidence": {
+          "layouts": [
+            {
+              "rows": 6,
+              "valueLength": 56,
+              "height": 170,
+              "scrollHeight": 170,
+              "width": 190,
+              "scrollWidth": 190
+            },
+            {
+              "rows": 6,
+              "valueLength": 56,
+              "height": 170,
+              "scrollHeight": 170,
+              "width": 190,
+              "scrollWidth": 190
+            }
+          ],
+          "changedFeedback": "第 3 句已改。点「演示返修」。",
+          "screenshot": "/tmp/chengsheng-copy-refinement/b-final-long-320.png",
+          "keyboardConfirmed": true
+        }
+      },
+      {
+        "name": "home 320: repeated setup anchor and expanded guide layout",
+        "pass": false,
+        "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   {\n+     element: 'faq',\n+     scrollWidth: 283,\n+     text: '常见问题\\n        \\n          使用与导出\\n          怎样完成第一次出声？\\n         ',\n+     width: 280\n+   },\n+   {\n+     element: 'SUMMARY',\n+     scrollWidth: 283,\n+     text: '怎样完成第一次出声？',\n+     width: 280\n+   }\n+ ]\n- []\n\n    at basic (/private/tmp/chengsheng-copy-refinement/assessment-b-final-browser.cjs:31:133)\n    at /private/tmp/chengsheng-copy-refinement/assessment-b-final-browser.cjs:51:377\n    at async check (/private/tmp/chengsheng-copy-refinement/assessment-b-final-browser.cjs:12:50)\n    at async /private/tmp/chengsheng-copy-refinement/assessment-b-final-browser.cjs:50:3"
+      },
+      {
+        "name": "home 320: ZIP feedback is local to footer",
+        "pass": false,
+        "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   {\n+     element: 'faq',\n+     scrollWidth: 284,\n+     text: '常见问题\\n        \\n          使用与导出\\n          怎样完成第一次出声？\\n         ',\n+     width: 280\n+   },\n+   {\n+     element: 'SUMMARY',\n+     scrollWidth: 284,\n+     text: '怎样完成第一次出声？',\n+     width: 280\n+   }\n+ ]\n- []\n\n    at basic (/private/tmp/chengsheng-copy-refinement/assessment-b-final-browser.cjs:31:133)\n    at /private/tmp/chengsheng-copy-refinement/assessment-b-final-browser.cjs:54:698\n    at async check (/private/tmp/chengsheng-copy-refinement/assessment-b-final-browser.cjs:12:50)\n    at async /private/tmp/chengsheng-copy-refinement/assessment-b-final-browser.cjs:53:3"
+      },
+      {
+        "name": "404 320: brand target shared fix",
+        "pass": true,
+        "evidence": {
+          "viewport": 320,
+          "scrollWidth": 320,
+          "controls": [
+            {
+              "selector": "brand",
+              "text": "成声",
+              "width": 80.328125,
+              "height": 44
+            },
+            {
+              "selector": "button button-primary",
+              "text": "回到首页",
+              "width": 182,
+              "height": 48
+            },
+            {
+              "selector": "text-link",
+              "text": "查看版本记录",
+              "width": 106,
+              "height": 44
+            }
+          ],
+          "shortControls": [],
+          "missing": [],
+          "overflow": [],
+          "links": [],
+          "removedCount": 0,
+          "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+        }
+      },
+      {
+        "name": "no-js 1440: accurate default copy, static feedback and downloads",
+        "pass": true,
+        "evidence": {
+          "dom": {
+            "viewport": 1440,
+            "scrollWidth": 1440,
+            "controls": [
+              {
+                "selector": "brand",
+                "text": "成声",
+                "width": 95.5,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "制书流程",
+                "width": 56,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "书稿与模型",
+                "width": 70,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "常见问题",
+                "width": 56,
+                "height": 44
+              },
+              {
+                "selector": "button button-small button-ink",
+                "text": "下载 Mac 版",
+                "width": 130.96875,
+                "height": 44
+              },
+              {
+                "selector": "#download-dmg",
+                "text": "下载 Mac 版",
+                "width": 180,
+                "height": 48
+              },
+              {
+                "selector": "text-link",
+                "text": "试改一句",
+                "width": 88,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "配置指南",
+                "width": 52,
+                "height": 44
+              },
+              {
+                "selector": "#demo-sentence",
+                "text": "门没关严。",
+                "width": 660,
+                "height": 44
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "怎样完成第一次出声？",
+                "width": 586.5,
+                "height": 66
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "能导出哪些音频？",
+                "width": 586.5,
+                "height": 66
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "怎样安装和更新？",
+                "width": 586.5,
+                "height": 66
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "下载失败怎么办？",
+                "width": 586.5,
+                "height": 66
+              },
+              {
+                "selector": "brand",
+                "text": "成声",
+                "width": 81.265625,
+                "height": 44
+              },
+              {
+                "selector": "#download-zip",
+                "text": "ZIP 备用包",
+                "width": 58.15625,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "版本记录",
+                "width": 48,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "回到顶部",
+                "width": 72,
+                "height": 44
+              }
+            ],
+            "shortControls": [],
+            "missing": [],
+            "overflow": [],
+            "links": [
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+                "type": "dmg",
+                "text": "下载 Mac 版",
+                "describedby": "platform-limit"
+              },
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+                "type": "dmg",
+                "text": "下载 Mac 版",
+                "describedby": "platform-limit"
+              },
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip",
+                "type": "zip",
+                "text": "ZIP 备用包",
+                "describedby": "platform-limit"
+              }
+            ],
+            "removedCount": 0,
+            "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+          },
+          "downloads": [
+            {
+              "filename": "Chengsheng-0.0.7-arm64.dmg",
+              "url": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+            },
+            {
+              "filename": "Chengsheng-0.0.7-arm64.dmg",
+              "url": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+            },
+            {
+              "filename": "Chengsheng-0.0.7-arm64.zip",
+              "url": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+            }
+          ],
+          "screenshot": null
+        }
+      },
+      {
+        "name": "blocked-site-js 1440: accurate default copy, static feedback and downloads",
+        "pass": true,
+        "evidence": {
+          "dom": {
+            "viewport": 1440,
+            "scrollWidth": 1440,
+            "controls": [
+              {
+                "selector": "brand",
+                "text": "成声",
+                "width": 95.5,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "制书流程",
+                "width": 56,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "书稿与模型",
+                "width": 70,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "常见问题",
+                "width": 56,
+                "height": 44
+              },
+              {
+                "selector": "button button-small button-ink",
+                "text": "下载 Mac 版",
+                "width": 130.96875,
+                "height": 44
+              },
+              {
+                "selector": "#download-dmg",
+                "text": "下载 Mac 版",
+                "width": 180,
+                "height": 48
+              },
+              {
+                "selector": "text-link",
+                "text": "试改一句",
+                "width": 88,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "配置指南",
+                "width": 52,
+                "height": 44
+              },
+              {
+                "selector": "#demo-sentence",
+                "text": "门没关严。",
+                "width": 660,
+                "height": 44
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "怎样完成第一次出声？",
+                "width": 586.5,
+                "height": 66
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "能导出哪些音频？",
+                "width": 586.5,
+                "height": 66
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "怎样安装和更新？",
+                "width": 586.5,
+                "height": 66
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "下载失败怎么办？",
+                "width": 586.5,
+                "height": 66
+              },
+              {
+                "selector": "brand",
+                "text": "成声",
+                "width": 81.265625,
+                "height": 44
+              },
+              {
+                "selector": "#download-zip",
+                "text": "ZIP 备用包",
+                "width": 58.15625,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "版本记录",
+                "width": 48,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "回到顶部",
+                "width": 72,
+                "height": 44
+              }
+            ],
+            "shortControls": [],
+            "missing": [],
+            "overflow": [],
+            "links": [
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+                "type": "dmg",
+                "text": "下载 Mac 版",
+                "describedby": "platform-limit"
+              },
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+                "type": "dmg",
+                "text": "下载 Mac 版",
+                "describedby": "platform-limit"
+              },
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip",
+                "type": "zip",
+                "text": "ZIP 备用包",
+                "describedby": "platform-limit"
+              }
+            ],
+            "removedCount": 0,
+            "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+          },
+          "downloads": [
+            {
+              "filename": "Chengsheng-0.0.7-arm64.dmg",
+              "url": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+            },
+            {
+              "filename": "Chengsheng-0.0.7-arm64.dmg",
+              "url": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+            },
+            {
+              "filename": "Chengsheng-0.0.7-arm64.zip",
+              "url": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+            }
+          ],
+          "screenshot": null
+        }
+      },
+      {
+        "name": "no-js 390: accurate default copy, static feedback and downloads",
+        "pass": true,
+        "evidence": {
+          "dom": {
+            "viewport": 390,
+            "scrollWidth": 390,
+            "controls": [
+              {
+                "selector": "brand",
+                "text": "成声",
+                "width": 80.328125,
+                "height": 44
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "导航",
+                "width": 58,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "校样示例",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "制书流程",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "书稿与模型",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "常见问题",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "button button-small button-ink",
+                "text": "下载 Mac 版",
+                "width": 95.96875,
+                "height": 44
+              },
+              {
+                "selector": "#download-dmg",
+                "text": "下载 Mac 版",
+                "width": 164,
+                "height": 48
+              },
+              {
+                "selector": "text-link",
+                "text": "试改一句",
+                "width": 80,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "配置指南",
+                "width": 52,
+                "height": 44
+              },
+              {
+                "selector": "#demo-sentence",
+                "text": "门没关严。",
+                "width": 186,
+                "height": 44
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "怎样完成第一次出声？",
+                "width": 350,
+                "height": 62
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "能导出哪些音频？",
+                "width": 350,
+                "height": 62
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "怎样安装和更新？",
+                "width": 350,
+                "height": 62
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "下载失败怎么办？",
+                "width": 350,
+                "height": 62
+              },
+              {
+                "selector": "brand",
+                "text": "成声",
+                "width": 78.265625,
+                "height": 44
+              },
+              {
+                "selector": "#download-zip",
+                "text": "ZIP 备用包",
+                "width": 53.5625,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "版本记录",
+                "width": 44,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "回到顶部",
+                "width": 68,
+                "height": 44
+              }
+            ],
+            "shortControls": [],
+            "missing": [],
+            "overflow": [],
+            "links": [
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+                "type": "dmg",
+                "text": "下载 Mac 版",
+                "describedby": "platform-limit"
+              },
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+                "type": "dmg",
+                "text": "下载 Mac 版",
+                "describedby": "platform-limit"
+              },
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip",
+                "type": "zip",
+                "text": "ZIP 备用包",
+                "describedby": "platform-limit"
+              }
+            ],
+            "removedCount": 0,
+            "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+          },
+          "downloads": [
+            {
+              "filename": "Chengsheng-0.0.7-arm64.dmg",
+              "url": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+            },
+            {
+              "filename": "Chengsheng-0.0.7-arm64.dmg",
+              "url": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+            },
+            {
+              "filename": "Chengsheng-0.0.7-arm64.zip",
+              "url": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+            }
+          ],
+          "screenshot": null
+        }
+      },
+      {
+        "name": "blocked-site-js 390: accurate default copy, static feedback and downloads",
+        "pass": true,
+        "evidence": {
+          "dom": {
+            "viewport": 390,
+            "scrollWidth": 390,
+            "controls": [
+              {
+                "selector": "brand",
+                "text": "成声",
+                "width": 80.328125,
+                "height": 44
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "导航",
+                "width": 58,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "校样示例",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "制书流程",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "书稿与模型",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "常见问题",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "button button-small button-ink",
+                "text": "下载 Mac 版",
+                "width": 95.96875,
+                "height": 44
+              },
+              {
+                "selector": "#download-dmg",
+                "text": "下载 Mac 版",
+                "width": 164,
+                "height": 48
+              },
+              {
+                "selector": "text-link",
+                "text": "试改一句",
+                "width": 80,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "配置指南",
+                "width": 52,
+                "height": 44
+              },
+              {
+                "selector": "#demo-sentence",
+                "text": "门没关严。",
+                "width": 186,
+                "height": 44
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "怎样完成第一次出声？",
+                "width": 350,
+                "height": 62
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "能导出哪些音频？",
+                "width": 350,
+                "height": 62
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "怎样安装和更新？",
+                "width": 350,
+                "height": 62
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "下载失败怎么办？",
+                "width": 350,
+                "height": 62
+              },
+              {
+                "selector": "brand",
+                "text": "成声",
+                "width": 78.265625,
+                "height": 44
+              },
+              {
+                "selector": "#download-zip",
+                "text": "ZIP 备用包",
+                "width": 53.5625,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "版本记录",
+                "width": 44,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "回到顶部",
+                "width": 68,
+                "height": 44
+              }
+            ],
+            "shortControls": [],
+            "missing": [],
+            "overflow": [],
+            "links": [
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+                "type": "dmg",
+                "text": "下载 Mac 版",
+                "describedby": "platform-limit"
+              },
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+                "type": "dmg",
+                "text": "下载 Mac 版",
+                "describedby": "platform-limit"
+              },
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip",
+                "type": "zip",
+                "text": "ZIP 备用包",
+                "describedby": "platform-limit"
+              }
+            ],
+            "removedCount": 0,
+            "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+          },
+          "downloads": [
+            {
+              "filename": "Chengsheng-0.0.7-arm64.dmg",
+              "url": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+            },
+            {
+              "filename": "Chengsheng-0.0.7-arm64.dmg",
+              "url": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+            },
+            {
+              "filename": "Chengsheng-0.0.7-arm64.zip",
+              "url": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+            }
+          ],
+          "screenshot": null
+        }
+      },
+      {
+        "name": "no-js 320: accurate default copy, static feedback and downloads",
+        "pass": true,
+        "evidence": {
+          "dom": {
+            "viewport": 320,
+            "scrollWidth": 320,
+            "controls": [
+              {
+                "selector": "brand",
+                "text": "成声",
+                "width": 80.328125,
+                "height": 44
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "导航",
+                "width": 52,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "校样示例",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "制书流程",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "书稿与模型",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "常见问题",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "button button-small button-ink",
+                "text": "下载 Mac 版",
+                "width": 95.96875,
+                "height": 44
+              },
+              {
+                "selector": "#download-dmg",
+                "text": "下载 Mac 版",
+                "width": 182,
+                "height": 48
+              },
+              {
+                "selector": "text-link",
+                "text": "试改一句",
+                "width": 80,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "配置指南",
+                "width": 52,
+                "height": 44
+              },
+              {
+                "selector": "#demo-sentence",
+                "text": "门没关严。",
+                "width": 190,
+                "height": 44
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "怎样完成第一次出声？",
+                "width": 280,
+                "height": 62
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "能导出哪些音频？",
+                "width": 280,
+                "height": 62
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "怎样安装和更新？",
+                "width": 280,
+                "height": 62
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "下载失败怎么办？",
+                "width": 280,
+                "height": 62
+              },
+              {
+                "selector": "brand",
+                "text": "成声",
+                "width": 78.265625,
+                "height": 44
+              },
+              {
+                "selector": "#download-zip",
+                "text": "ZIP 备用包",
+                "width": 53.5625,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "版本记录",
+                "width": 44,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "回到顶部",
+                "width": 68,
+                "height": 44
+              }
+            ],
+            "shortControls": [],
+            "missing": [],
+            "overflow": [],
+            "links": [
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+                "type": "dmg",
+                "text": "下载 Mac 版",
+                "describedby": "platform-limit"
+              },
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+                "type": "dmg",
+                "text": "下载 Mac 版",
+                "describedby": "platform-limit"
+              },
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip",
+                "type": "zip",
+                "text": "ZIP 备用包",
+                "describedby": "platform-limit"
+              }
+            ],
+            "removedCount": 0,
+            "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+          },
+          "downloads": [
+            {
+              "filename": "Chengsheng-0.0.7-arm64.dmg",
+              "url": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+            },
+            {
+              "filename": "Chengsheng-0.0.7-arm64.dmg",
+              "url": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+            },
+            {
+              "filename": "Chengsheng-0.0.7-arm64.zip",
+              "url": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+            }
+          ],
+          "screenshot": "/tmp/chengsheng-copy-refinement/b-final-no-js-320.png"
+        }
+      },
+      {
+        "name": "blocked-site-js 320: accurate default copy, static feedback and downloads",
+        "pass": true,
+        "evidence": {
+          "dom": {
+            "viewport": 320,
+            "scrollWidth": 320,
+            "controls": [
+              {
+                "selector": "brand",
+                "text": "成声",
+                "width": 80.328125,
+                "height": 44
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "导航",
+                "width": 52,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "校样示例",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "制书流程",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "书稿与模型",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "常见问题",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "button button-small button-ink",
+                "text": "下载 Mac 版",
+                "width": 95.96875,
+                "height": 44
+              },
+              {
+                "selector": "#download-dmg",
+                "text": "下载 Mac 版",
+                "width": 182,
+                "height": 48
+              },
+              {
+                "selector": "text-link",
+                "text": "试改一句",
+                "width": 80,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "配置指南",
+                "width": 52,
+                "height": 44
+              },
+              {
+                "selector": "#demo-sentence",
+                "text": "门没关严。",
+                "width": 190,
+                "height": 44
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "怎样完成第一次出声？",
+                "width": 280,
+                "height": 62
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "能导出哪些音频？",
+                "width": 280,
+                "height": 62
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "怎样安装和更新？",
+                "width": 280,
+                "height": 62
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "下载失败怎么办？",
+                "width": 280,
+                "height": 62
+              },
+              {
+                "selector": "brand",
+                "text": "成声",
+                "width": 78.265625,
+                "height": 44
+              },
+              {
+                "selector": "#download-zip",
+                "text": "ZIP 备用包",
+                "width": 53.5625,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "版本记录",
+                "width": 44,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "回到顶部",
+                "width": 68,
+                "height": 44
+              }
+            ],
+            "shortControls": [],
+            "missing": [],
+            "overflow": [],
+            "links": [
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+                "type": "dmg",
+                "text": "下载 Mac 版",
+                "describedby": "platform-limit"
+              },
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+                "type": "dmg",
+                "text": "下载 Mac 版",
+                "describedby": "platform-limit"
+              },
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip",
+                "type": "zip",
+                "text": "ZIP 备用包",
+                "describedby": "platform-limit"
+              }
+            ],
+            "removedCount": 0,
+            "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+          },
+          "downloads": [
+            {
+              "filename": "Chengsheng-0.0.7-arm64.dmg",
+              "url": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+            },
+            {
+              "filename": "Chengsheng-0.0.7-arm64.dmg",
+              "url": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+            },
+            {
+              "filename": "Chengsheng-0.0.7-arm64.zip",
+              "url": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+            }
+          ],
+          "screenshot": "/tmp/chengsheng-copy-refinement/b-final-blocked-site-js-320.png"
+        }
+      },
+      {
+        "name": "non-Mac 390: all three download descriptions and lightweight copy",
+        "pass": true,
+        "evidence": {
+          "dom": {
+            "viewport": 390,
+            "scrollWidth": 390,
+            "controls": [
+              {
+                "selector": "brand",
+                "text": "成声",
+                "width": 80.328125,
+                "height": 44
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "导航",
+                "width": 58,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "校样示例",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "制书流程",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "书稿与模型",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "常见问题",
+                "width": 138,
+                "height": 44
+              },
+              {
+                "selector": "button button-small button-ink",
+                "text": "保存 Mac 安装包",
+                "width": 121.96875,
+                "height": 44
+              },
+              {
+                "selector": "#download-dmg",
+                "text": "保存 Mac 安装包",
+                "width": 193.3125,
+                "height": 48
+              },
+              {
+                "selector": "text-link",
+                "text": "试改一句",
+                "width": 80,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "配置指南",
+                "width": 52,
+                "height": 44
+              },
+              {
+                "selector": "#demo-sentence",
+                "text": "门没关严。",
+                "width": 186,
+                "height": 44
+              },
+              {
+                "selector": "#edit-demo",
+                "text": "换个例句",
+                "width": 98,
+                "height": 44
+              },
+              {
+                "selector": "#render-demo",
+                "text": "演示返修",
+                "width": 140,
+                "height": 44
+              },
+              {
+                "selector": "#reset-demo",
+                "text": "重置示例",
+                "width": 58,
+                "height": 44
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "怎样完成第一次出声？",
+                "width": 350,
+                "height": 62
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "能导出哪些音频？",
+                "width": 350,
+                "height": 62
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "怎样安装和更新？",
+                "width": 350,
+                "height": 62
+              },
+              {
+                "selector": "SUMMARY",
+                "text": "下载失败怎么办？",
+                "width": 350,
+                "height": 62
+              },
+              {
+                "selector": "brand",
+                "text": "成声",
+                "width": 78.265625,
+                "height": 44
+              },
+              {
+                "selector": "#download-zip",
+                "text": "ZIP 备用包",
+                "width": 53.5625,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "版本记录",
+                "width": 44,
+                "height": 44
+              },
+              {
+                "selector": "A",
+                "text": "回到顶部",
+                "width": 68,
+                "height": 44
+              }
+            ],
+            "shortControls": [],
+            "missing": [],
+            "overflow": [],
+            "links": [
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+                "type": "dmg",
+                "text": "保存 Mac 安装包",
+                "describedby": "platform-limit os-note"
+              },
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+                "type": "dmg",
+                "text": "保存 Mac 安装包",
+                "describedby": "platform-limit os-note"
+              },
+              {
+                "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip",
+                "type": "zip",
+                "text": "ZIP 备用包",
+                "describedby": "platform-limit os-note"
+              }
+            ],
+            "removedCount": 0,
+            "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+          },
+          "note": "可保存安装包，在符合上方要求的 Mac 上运行成声。",
+          "screenshot": "/tmp/chengsheng-copy-refinement/b-final-non-mac-390.png"
+        }
+      },
+      {
+        "name": "ZIP before current feed: race feedback remains local and loading state clears",
+        "pass": false,
+        "error": "AssertionError [ERR_ASSERTION]: Release feed has completed but hero still says it is checking\n    at /private/tmp/chengsheng-copy-refinement/assessment-b-final-browser.cjs:75:11\n    at async check (/private/tmp/chengsheng-copy-refinement/assessment-b-final-browser.cjs:12:50)\n    at async /private/tmp/chengsheng-copy-refinement/assessment-b-final-browser.cjs:71:3"
+      },
+      {
+        "name": "ZIP before newer feed: race feedback remains local and loading state clears",
+        "pass": false,
+        "error": "AssertionError [ERR_ASSERTION]: Release feed has completed but hero still says it is checking\n    at /private/tmp/chengsheng-copy-refinement/assessment-b-final-browser.cjs:75:11\n    at async check (/private/tmp/chengsheng-copy-refinement/assessment-b-final-browser.cjs:12:50)\n    at async /private/tmp/chengsheng-copy-refinement/assessment-b-final-browser.cjs:71:3"
+      }
+    ],
+    "console": [
+      {
+        "kind": "error",
+        "message": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+      },
+      {
+        "kind": "error",
+        "message": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+      },
+      {
+        "kind": "error",
+        "message": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+      }
+    ],
+    "screenshots": [
+      "/tmp/chengsheng-copy-refinement/b-final-home-1440.png",
+      "/tmp/chengsheng-copy-refinement/b-final-long-1440.png",
+      "/tmp/chengsheng-copy-refinement/b-final-home-390.png",
+      "/tmp/chengsheng-copy-refinement/b-final-long-390.png",
+      "/tmp/chengsheng-copy-refinement/b-final-home-320.png",
+      "/tmp/chengsheng-copy-refinement/b-final-long-320.png",
+      "/tmp/chengsheng-copy-refinement/b-final-no-js-320.png",
+      "/tmp/chengsheng-copy-refinement/b-final-blocked-site-js-320.png",
+      "/tmp/chengsheng-copy-refinement/b-final-non-mac-390.png",
+      "/tmp/chengsheng-copy-refinement/b-final-zip-race-current-320.png",
+      "/tmp/chengsheng-copy-refinement/b-final-zip-race-newer-320.png"
+    ],
+    "sourceBefore": {
+      "index.html": "25bbe49a4b407dcc2373d3733c4a3159eeb83f2b198eb893c67ef88acbea5bda",
+      "site.css": "bc4e3500bc30f5c89187a7a8c4c638f99cb189373fc9305e013d13aa2a00cd0c",
+      "site.js": "83164f7f99458d9942d69d2ac72eab61cfc05b32b02288a4abc2b9429714f1b8",
+      "404.html": "a3163d3c475e7a8162d382bcf5808dfdf11c7225498423fbd2ba20e50c3c69fd"
+    },
+    "browserClosed": true,
+    "raceEvidence": [
+      {
+        "fixture": {
+          "filename": "Chengsheng-0.0.7-arm64.zip",
+          "url": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+        },
+        "initialZipStatus": "已打开 ZIP 下载链接。进度请查看浏览器下载列表。",
+        "finalZipStatus": "已打开 ZIP 下载链接。进度请查看浏览器下载列表。",
+        "heroStatus": "正在检查新版，当前安装包可下载。",
+        "links": [
+          {
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+            "type": "dmg",
+            "text": "下载 Mac 版",
+            "describedby": "platform-limit"
+          },
+          {
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+            "type": "dmg",
+            "text": "下载 Mac 版",
+            "describedby": "platform-limit"
+          },
+          {
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip",
+            "type": "zip",
+            "text": "ZIP 备用包",
+            "describedby": "platform-limit"
+          }
+        ],
+        "screenshot": "/tmp/chengsheng-copy-refinement/b-final-zip-race-current-320.png"
+      },
+      {
+        "fixture": {
+          "filename": "Chengsheng-0.0.7-arm64.zip",
+          "url": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+        },
+        "initialZipStatus": "已打开 ZIP 下载链接。进度请查看浏览器下载列表。",
+        "finalZipStatus": "下载链接已更新为 v0.0.8。你刚才打开的是 v0.0.7，可重新下载。",
+        "heroStatus": "正在检查新版，当前安装包可下载。",
+        "links": [
+          {
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.8/Chengsheng-0.0.8-arm64.dmg",
+            "type": "dmg",
+            "text": "下载 Mac 版",
+            "describedby": "platform-limit"
+          },
+          {
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.8/Chengsheng-0.0.8-arm64.dmg",
+            "type": "dmg",
+            "text": "下载 Mac 版",
+            "describedby": "platform-limit"
+          },
+          {
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.8/Chengsheng-0.0.8-arm64.zip",
+            "type": "zip",
+            "text": "ZIP 备用包",
+            "describedby": "platform-limit"
+          }
+        ],
+        "screenshot": "/tmp/chengsheng-copy-refinement/b-final-zip-race-newer-320.png"
+      }
+    ],
+    "sourceAfter": {
+      "index.html": "25bbe49a4b407dcc2373d3733c4a3159eeb83f2b198eb893c67ef88acbea5bda",
+      "site.css": "bc4e3500bc30f5c89187a7a8c4c638f99cb189373fc9305e013d13aa2a00cd0c",
+      "site.js": "83164f7f99458d9942d69d2ac72eab61cfc05b32b02288a4abc2b9429714f1b8",
+      "404.html": "a3163d3c475e7a8162d382bcf5808dfdf11c7225498423fbd2ba20e50c3c69fd"
+    },
+    "sourceUnchanged": true,
+    "finishedAt": "2026-10-01T07:08:34.643Z",
+    "summary": {
+      "total": 24,
+      "passed": 18,
+      "failed": 6
+    }
+  },
+  "cleanup": {
+    "browserClosed": true,
+    "allContextsClosed": true,
+    "sourceUnchanged": true,
+    "temporaryArtifactsRetained": true
+  }
+}

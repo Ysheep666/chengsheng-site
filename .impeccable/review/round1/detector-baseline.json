@@ -1,0 +1,335 @@
+{
+  "command": [
+    "/Users/xyz/.agents/skills/impeccable/scripts/impeccable",
+    "detect",
+    "--json",
+    "index.html",
+    "404.html"
+  ],
+  "exitCode": 2,
+  "total": 31,
+  "byRule": {
+    "cramped-padding": 13,
+    "undersized-ui-text": 14,
+    "tiny-text": 4
+  },
+  "bySeverity": {
+    "warning": 31
+  },
+  "byFile": {
+    "/Users/xyz/ABC/chengsheng-site/index.html": 31
+  },
+  "findings": [
+    {
+      "antipattern": "cramped-padding",
+      "name": "Cramped padding",
+      "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "<div> \"app-window\": children flush against border+bg on all sides (no inset)"
+    },
+    {
+      "antipattern": "cramped-padding",
+      "name": "Cramped padding",
+      "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "<div> \"window-titlebar\": children flush against border-bottom+bg on all sides (no inset)"
+    },
+    {
+      "antipattern": "undersized-ui-text",
+      "name": "Undersized functional text",
+      "description": "Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "10px functional text \"旁白\" (below 11px floor)"
+    },
+    {
+      "antipattern": "undersized-ui-text",
+      "name": "Undersized functional text",
+      "description": "Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "10px functional text \"已出声\" (below 11px floor)"
+    },
+    {
+      "antipattern": "undersized-ui-text",
+      "name": "Undersized functional text",
+      "description": "Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "10px functional text \"阿禾\" (below 11px floor)"
+    },
+    {
+      "antipattern": "undersized-ui-text",
+      "name": "Undersized functional text",
+      "description": "Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "10px functional text \"已出声\" (below 11px floor)"
+    },
+    {
+      "antipattern": "undersized-ui-text",
+      "name": "Undersized functional text",
+      "description": "Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "10px functional text \"旁白\" (below 11px floor)"
+    },
+    {
+      "antipattern": "undersized-ui-text",
+      "name": "Undersized functional text",
+      "description": "Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "10px functional text \"已出声\" (below 11px floor)"
+    },
+    {
+      "antipattern": "undersized-ui-text",
+      "name": "Undersized functional text",
+      "description": "Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "10px functional text \"阿禾\" (below 11px floor)"
+    },
+    {
+      "antipattern": "undersized-ui-text",
+      "name": "Undersized functional text",
+      "description": "Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "10px functional text \"已出声\" (below 11px floor)"
+    },
+    {
+      "antipattern": "tiny-text",
+      "name": "Tiny body text",
+      "description": "Body text below 12px is hard to read, especially on high-DPI screens. Use at least 14px for body content, 16px is ideal.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "11px body text"
+    },
+    {
+      "antipattern": "undersized-ui-text",
+      "name": "Undersized functional text",
+      "description": "Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "10px functional text \"从一份文字开始\" (below 11px floor)"
+    },
+    {
+      "antipattern": "undersized-ui-text",
+      "name": "Undersized functional text",
+      "description": "Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "10px functional text \"让故事有层次\" (below 11px floor)"
+    },
+    {
+      "antipattern": "undersized-ui-text",
+      "name": "Undersized functional text",
+      "description": "Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "10px functional text \"一句是最小返修单位\" (below 11px floor)"
+    },
+    {
+      "antipattern": "cramped-padding",
+      "name": "Cramped padding",
+      "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "<li>: children flush against border-right on right (no inset)"
+    },
+    {
+      "antipattern": "undersized-ui-text",
+      "name": "Undersized functional text",
+      "description": "Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "10px functional text \"从第一句，到整本书\" (below 11px floor)"
+    },
+    {
+      "antipattern": "cramped-padding",
+      "name": "Cramped padding",
+      "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "<div>: children flush against border-bottom on bottom (no inset)"
+    },
+    {
+      "antipattern": "cramped-padding",
+      "name": "Cramped padding",
+      "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "<div>: children flush against border-bottom on bottom (no inset)"
+    },
+    {
+      "antipattern": "cramped-padding",
+      "name": "Cramped padding",
+      "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "<div>: children flush against border-bottom on bottom (no inset)"
+    },
+    {
+      "antipattern": "cramped-padding",
+      "name": "Cramped padding",
+      "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "<span> \"release-tag\": children flush against border+bg on top/bottom (no inset)"
+    },
+    {
+      "antipattern": "tiny-text",
+      "name": "Tiny body text",
+      "description": "Body text below 12px is hard to read, especially on high-DPI screens. Use at least 14px for body content, 16px is ideal.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "10px body text"
+    },
+    {
+      "antipattern": "undersized-ui-text",
+      "name": "Undersized functional text",
+      "description": "Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "10px functional text \"Chengsheng-0.0.7-arm64.dmg\" (below 11px floor)"
+    },
+    {
+      "antipattern": "undersized-ui-text",
+      "name": "Undersized functional text",
+      "description": "Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "10px functional text \"DMG · 首次安装推荐\" (below 11px floor)"
+    },
+    {
+      "antipattern": "tiny-text",
+      "name": "Tiny body text",
+      "description": "Body text below 12px is hard to read, especially on high-DPI screens. Use at least 14px for body content, 16px is ideal.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "11px body text"
+    },
+    {
+      "antipattern": "cramped-padding",
+      "name": "Cramped padding",
+      "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "<li>: children flush against border-top on top (no inset)"
+    },
+    {
+      "antipattern": "cramped-padding",
+      "name": "Cramped padding",
+      "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "<li>: children flush against border-top on top (no inset)"
+    },
+    {
+      "antipattern": "cramped-padding",
+      "name": "Cramped padding",
+      "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "<li>: children flush against border-top on top (no inset)"
+    },
+    {
+      "antipattern": "cramped-padding",
+      "name": "Cramped padding",
+      "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "<details> \"advanced-download\": children flush against border-top/bottom on top (no inset)"
+    },
+    {
+      "antipattern": "tiny-text",
+      "name": "Tiny body text",
+      "description": "Body text below 12px is hard to read, especially on high-DPI screens. Use at least 14px for body content, 16px is ideal.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "11px body text"
+    },
+    {
+      "antipattern": "cramped-padding",
+      "name": "Cramped padding",
+      "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "<section> \"faq-section\": children flush against border-top on top (no inset)"
+    },
+    {
+      "antipattern": "cramped-padding",
+      "name": "Cramped padding",
+      "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "/Users/xyz/ABC/chengsheng-site/index.html",
+      "line": 0,
+      "snippet": "<details>: children flush against border-top/bottom on top (no inset)"
+    }
+  ],
+  "stderr": ""
+}

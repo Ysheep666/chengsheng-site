@@ -1,0 +1,107 @@
+[
+  {
+    "name": "desktop",
+    "width": 1440,
+    "height": 900,
+    "title": "成声 — 让书稿，一句句成声",
+    "overflow": 0,
+    "fontLoaded": true,
+    "scrollHeight": 4042,
+    "missingAnchors": [],
+    "sizes": {
+      ".demo-label": "12px",
+      ".speaker": "13px",
+      ".line-state": "13px",
+      ".demo-feedback": "13px",
+      ".demo-disclaimer": "13px",
+      ".file-name": "13px",
+      ".install-steps li > span": "14px",
+      ".utility-button": "13px"
+    },
+    "errors": []
+  },
+  {
+    "name": "laptop",
+    "width": 1280,
+    "height": 900,
+    "title": "成声 — 让书稿，一句句成声",
+    "overflow": 0,
+    "fontLoaded": true,
+    "scrollHeight": 4022,
+    "missingAnchors": [],
+    "sizes": {
+      ".demo-label": "12px",
+      ".speaker": "13px",
+      ".line-state": "13px",
+      ".demo-feedback": "13px",
+      ".demo-disclaimer": "13px",
+      ".file-name": "13px",
+      ".install-steps li > span": "14px",
+      ".utility-button": "13px"
+    },
+    "errors": []
+  },
+  {
+    "name": "tablet",
+    "width": 768,
+    "height": 1024,
+    "title": "成声 — 让书稿，一句句成声",
+    "overflow": 0,
+    "fontLoaded": true,
+    "scrollHeight": 4457,
+    "missingAnchors": [],
+    "sizes": {
+      ".demo-label": "12px",
+      ".speaker": "13px",
+      ".line-state": "13px",
+      ".demo-feedback": "13px",
+      ".demo-disclaimer": "13px",
+      ".file-name": "13px",
+      ".install-steps li > span": "14px",
+      ".utility-button": "13px"
+    },
+    "errors": []
+  },
+  {
+    "name": "mobile",
+    "width": 390,
+    "height": 844,
+    "title": "成声 — 让书稿，一句句成声",
+    "overflow": 0,
+    "fontLoaded": true,
+    "scrollHeight": 4887,
+    "missingAnchors": [],
+    "sizes": {
+      ".demo-label": "12px",
+      ".speaker": "13px",
+      ".line-state": "13px",
+      ".demo-feedback": "13px",
+      ".demo-disclaimer": "13px",
+      ".file-name": "13px",
+      ".install-steps li > span": "14px",
+      ".utility-button": "13px"
+    },
+    "errors": []
+  },
+  {
+    "name": "narrow",
+    "width": 320,
+    "height": 740,
+    "title": "成声 — 让书稿，一句句成声",
+    "overflow": 0,
+    "fontLoaded": true,
+    "scrollHeight": 5165,
+    "missingAnchors": [],
+    "sizes": {
+      ".demo-label": "12px",
+      ".speaker": "13px",
+      ".line-state": "13px",
+      ".demo-feedback": "13px",
+      ".demo-disclaimer": "13px",
+      ".file-name": "13px",
+      ".install-steps li > span": "14px",
+      ".utility-button": "13px"
+    },
+    "errors": []
+  }
+]

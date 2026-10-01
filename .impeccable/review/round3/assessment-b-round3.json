@@ -1,0 +1,471 @@
+{
+  "method": "isolated narrow Assessment B round3; no A or historical critique report read",
+  "targets": [
+    "index.html",
+    "site.css",
+    "site.js"
+  ],
+  "url": "http://127.0.0.1:4173/",
+  "sourceStableDuringRun": true,
+  "scanStatus": {
+    "detector": false,
+    "axe": false,
+    "overlay": false,
+    "old95AssertionMatrix": false
+  },
+  "checks": {
+    "total": 37,
+    "passed": 37,
+    "failed": 0,
+    "errors": []
+  },
+  "previousP3": {
+    "status": "closed",
+    "evidence": "Both utility copy buttons are 65×44px in default, success and permission-denied restored-label states at 1440/390/320; min-inline-size computes to 65px and text-align is left."
+  },
+  "newBlockingIssues": [],
+  "copyProof": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "allow + JS enabled",
+      "states": [
+        {
+          "button": "#copy-command",
+          "width": 65,
+          "height": 44,
+          "label": "已复制",
+          "valueCorrect": true,
+          "focused": "copy-command",
+          "statusVisible": true,
+          "noOverflow": true
+        },
+        {
+          "button": "#copy-checksum",
+          "width": 65,
+          "height": 44,
+          "label": "已复制",
+          "valueCorrect": true,
+          "focused": "copy-checksum",
+          "statusVisible": true,
+          "noOverflow": true
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "deny",
+      "states": [
+        {
+          "button": "#copy-command",
+          "width": 65,
+          "height": 44,
+          "label": "复制命令",
+          "valueCorrect": true,
+          "focused": "copy-command",
+          "statusVisible": true,
+          "noOverflow": true
+        },
+        {
+          "button": "#copy-checksum",
+          "width": 65,
+          "height": 44,
+          "label": "复制校验值",
+          "valueCorrect": true,
+          "focused": "copy-checksum",
+          "statusVisible": true,
+          "noOverflow": true
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "mode": "allow + JS enabled",
+      "states": [
+        {
+          "button": "#copy-command",
+          "width": 65,
+          "height": 44,
+          "label": "已复制",
+          "valueCorrect": true,
+          "focused": "copy-command",
+          "statusVisible": true,
+          "noOverflow": true
+        },
+        {
+          "button": "#copy-checksum",
+          "width": 65,
+          "height": 44,
+          "label": "已复制",
+          "valueCorrect": true,
+          "focused": "copy-checksum",
+          "statusVisible": true,
+          "noOverflow": true
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "mode": "deny",
+      "states": [
+        {
+          "button": "#copy-command",
+          "width": 65,
+          "height": 44,
+          "label": "复制命令",
+          "valueCorrect": true,
+          "focused": "copy-command",
+          "statusVisible": true,
+          "noOverflow": true
+        },
+        {
+          "button": "#copy-checksum",
+          "width": 65,
+          "height": 44,
+          "label": "复制校验值",
+          "valueCorrect": true,
+          "focused": "copy-checksum",
+          "statusVisible": true,
+          "noOverflow": true
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 740
+      },
+      "mode": "allow + JS enabled",
+      "states": [
+        {
+          "button": "#copy-command",
+          "width": 65,
+          "height": 44,
+          "label": "已复制",
+          "valueCorrect": true,
+          "focused": "copy-command",
+          "statusVisible": true,
+          "noOverflow": true
+        },
+        {
+          "button": "#copy-checksum",
+          "width": 65,
+          "height": 44,
+          "label": "已复制",
+          "valueCorrect": true,
+          "focused": "copy-checksum",
+          "statusVisible": true,
+          "noOverflow": true
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 740
+      },
+      "mode": "deny",
+      "states": [
+        {
+          "button": "#copy-command",
+          "width": 65,
+          "height": 44,
+          "label": "复制命令",
+          "valueCorrect": true,
+          "focused": "copy-command",
+          "statusVisible": true,
+          "noOverflow": true
+        },
+        {
+          "button": "#copy-checksum",
+          "width": 65,
+          "height": 44,
+          "label": "复制校验值",
+          "valueCorrect": true,
+          "focused": "copy-checksum",
+          "statusVisible": true,
+          "noOverflow": true
+        }
+      ]
+    }
+  ],
+  "jsModes": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "allow + JS enabled",
+      "ui": {
+        "label": "示意 · 仅第三句可编辑",
+        "feedback": "直接改第三句，或点「改一句试试」。Ctrl / ⌘ + Enter 返修，Esc 重置。",
+        "inputDisabled": false,
+        "controlsVisible": true,
+        "noscriptText": "",
+        "noscriptVisible": false,
+        "groupLabel": "四句示例校样，第三句可编辑",
+        "downloads": [
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "zip",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+          }
+        ],
+        "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "JS disabled",
+      "ui": {
+        "label": "校样示意",
+        "feedback": "此处是静态校样示意，下载与安装仍可使用。",
+        "inputDisabled": true,
+        "controlsVisible": false,
+        "noscriptText": "启用 JavaScript 后，可修改第三句、演示返修并重置。",
+        "noscriptVisible": true,
+        "groupLabel": "四句示例校样，第三句可编辑",
+        "downloads": [
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "zip",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+          }
+        ],
+        "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "mode": "allow + JS enabled",
+      "ui": {
+        "label": "示意 · 仅第三句可编辑",
+        "feedback": "直接改第三句，或点「改一句试试」。Ctrl / ⌘ + Enter 返修，Esc 重置。",
+        "inputDisabled": false,
+        "controlsVisible": true,
+        "noscriptText": "",
+        "noscriptVisible": false,
+        "groupLabel": "四句示例校样，第三句可编辑",
+        "downloads": [
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "zip",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+          }
+        ],
+        "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "mode": "JS disabled",
+      "ui": {
+        "label": "校样示意",
+        "feedback": "此处是静态校样示意，下载与安装仍可使用。",
+        "inputDisabled": true,
+        "controlsVisible": false,
+        "noscriptText": "启用 JavaScript 后，可修改第三句、演示返修并重置。",
+        "noscriptVisible": true,
+        "groupLabel": "四句示例校样，第三句可编辑",
+        "downloads": [
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "zip",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+          }
+        ],
+        "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+      }
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 740
+      },
+      "mode": "allow + JS enabled",
+      "ui": {
+        "label": "示意 · 仅第三句可编辑",
+        "feedback": "直接改第三句，或点「改一句试试」。Ctrl / ⌘ + Enter 返修，Esc 重置。",
+        "inputDisabled": false,
+        "controlsVisible": true,
+        "noscriptText": "",
+        "noscriptVisible": false,
+        "groupLabel": "四句示例校样，第三句可编辑",
+        "downloads": [
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "zip",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+          }
+        ],
+        "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+      }
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 740
+      },
+      "mode": "JS disabled",
+      "ui": {
+        "label": "校样示意",
+        "feedback": "此处是静态校样示意，下载与安装仍可使用。",
+        "inputDisabled": true,
+        "controlsVisible": false,
+        "noscriptText": "启用 JavaScript 后，可修改第三句、演示返修并重置。",
+        "noscriptVisible": true,
+        "groupLabel": "四句示例校样，第三句可编辑",
+        "downloads": [
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "zip",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+          }
+        ],
+        "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "mode": "site.js blocked",
+      "ui": {
+        "label": "校样示意",
+        "feedback": "此处是静态校样示意，下载与安装仍可使用。",
+        "inputDisabled": true,
+        "controlsVisible": false,
+        "noscriptText": "",
+        "noscriptVisible": false,
+        "groupLabel": "四句示例校样，第三句可编辑",
+        "downloads": [
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "dmg",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+          },
+          {
+            "type": "zip",
+            "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip"
+          }
+        ],
+        "csp": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+      }
+    }
+  ],
+  "expectedFaultInjection": [
+    {
+      "mode": "site.js blocked",
+      "logs": {
+        "console": [
+          {
+            "type": "error",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "location": {
+              "url": "http://127.0.0.1:4173/site.js",
+              "line": 0,
+              "column": 0,
+              "lineNumber": 0,
+              "columnNumber": 0
+            }
+          }
+        ],
+        "errors": [],
+        "failed": [
+          {
+            "url": "http://127.0.0.1:4173/site.js",
+            "reason": "net::ERR_FAILED"
+          }
+        ]
+      },
+      "note": "Deliberate site.js request abort. Static fallback and links survive; expected resource failure is not a product console regression."
+    }
+  ],
+  "rawEvidence": "browser-b-round3.json",
+  "script": "assessment-b-browser-round3.cjs",
+  "sourceStability": "source-stability-b-round3.json",
+  "screenshots": [
+    "b3-copy-allow-checksum-320.png",
+    "b3-copy-allow-command-320.png",
+    "b3-copy-deny-checksum-320.png",
+    "b3-copy-deny-command-320.png",
+    "b3-guide-1440.png",
+    "b3-guide-320.png",
+    "b3-guide-390.png",
+    "b3-static-no-js-390.png",
+    "b3-static-script-blocked-390.png"
+  ],
+  "limits": [
+    "Narrow change confirmation only; no old interaction matrix, manifest boundary expansion, axe, detector or overlay rerun.",
+    "Actual v0.0.7 model gate/button facts were verified by root; this run only checks text rendering and navigation retention.",
+    "DMG/ZIP hrefs retained and inspected; no real release binary downloaded.",
+    "Chromium headless viewport simulation, not actual mobile Safari."
+  ],
+  "cleanup": "All browser contexts closed; no extra server started; product code unchanged; requested evidence retained only under /tmp/chengsheng-redesign-evidence."
+}

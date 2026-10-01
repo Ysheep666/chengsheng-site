@@ -1,0 +1,27 @@
+{
+  "normal": {
+    "label": "示意 · 仅第三句可编辑",
+    "feedback": "直接改第三句，或点「改一句试试」。Ctrl / ⌘ + Enter 返修，Esc 重置。",
+    "disabled": false,
+    "controlsHidden": false,
+    "noscript": "<p class=\"demo-feedback\">启用 JavaScript 后，可修改第三句、演示返修并重置。</p>",
+    "download": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+  },
+  "guide": {
+    "open": true,
+    "paragraph": "导入仍不可用时，检查两类当前模型的校验、已启用音色，以及引擎是否运行；引擎停止时按应用横幅提示重启。校验或试听失败，先看失败原因，再检查服务、地址和凭据。远程服务会收到用于合成或拆书的相关文本。"
+  },
+  "utility": {
+    "text": "已复制",
+    "width": 65,
+    "height": 44
+  },
+  "noJS": {
+    "label": "校样示意",
+    "feedback": "此处是静态校样示意，下载与安装仍可使用。",
+    "disabled": true,
+    "controlsHidden": true,
+    "noscript": "启用 JavaScript 后，可修改第三句、演示返修并重置。",
+    "download": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+  }
+}

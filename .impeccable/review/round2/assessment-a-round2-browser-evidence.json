@@ -1,0 +1,296 @@
+{
+  "initial": {
+    "active": "BODY",
+    "readOnly": false,
+    "value": "门没关严。",
+    "rows": 1,
+    "length": "5 / 56 字符",
+    "state": "已出声",
+    "feedback": "直接改第三句，或点「改一句试试」。Ctrl / ⌘ + Enter 返修，Esc 重置。",
+    "disabled": true
+  },
+  "rendering": {
+    "active": "demo-sentence",
+    "readOnly": true,
+    "value": "门没有关严，屋子里透着一线温暖的灯光，阿禾正等着归来的人。",
+    "rows": 1,
+    "length": "29 / 56 字符",
+    "state": "演示中",
+    "feedback": "正在演示第 3 句的单独返修。网页不调用模型，也不会生成音频。",
+    "disabled": true
+  },
+  "completed": {
+    "active": "demo-sentence",
+    "readOnly": false,
+    "value": "门没有关严，屋子里透着一线温暖的灯光，阿禾正等着归来的人。",
+    "rows": 1,
+    "length": "29 / 56 字符",
+    "state": "已出声",
+    "feedback": "演示完成：只返修了第 3 句，其余 3 句不变。可以继续改字，或重置示例。",
+    "disabled": true
+  },
+  "reset": {
+    "active": "demo-sentence",
+    "readOnly": false,
+    "value": "门没关严。",
+    "rows": 1,
+    "length": "5 / 56 字符",
+    "state": "已出声",
+    "feedback": "示例已重置。你可以再改一句试试。",
+    "disabled": true
+  },
+  "empty": {
+    "active": "demo-sentence",
+    "readOnly": false,
+    "value": "",
+    "rows": 1,
+    "length": "0 / 56 字符",
+    "state": "待补文字",
+    "feedback": "请先补上这一句文字，再演示返修。",
+    "disabled": true
+  },
+  "noFocusTheft": {
+    "active": "A",
+    "readOnly": false,
+    "value": "门还虚掩着。",
+    "rows": 1,
+    "length": "6 / 56 字符",
+    "state": "已出声",
+    "feedback": "演示完成：只返修了第 3 句，其余 3 句不变。可以继续改字，或重置示例。",
+    "disabled": true
+  },
+  "guideAnchor": {
+    "open": true,
+    "top": 103.515625,
+    "hash": "#model-help"
+  },
+  "guideSameHash": {
+    "open": true,
+    "top": 103.515625,
+    "hash": "#model-help"
+  },
+  "copySuccess": {
+    "button": "已复制",
+    "status": "Mac 下载地址已复制，可在支持的 Mac 上打开。",
+    "value": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+    "top": 532.765625
+  },
+  "copyFailure": {
+    "button": "复制下载地址",
+    "status": "自动复制不可用。请手动复制已选中的内容：https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+    "selection": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+    "top": 532.765625
+  },
+  "checks": [
+    {
+      "input": "abc",
+      "feedback": "还差 61 位。请粘贴完整的校验值。"
+    },
+    {
+      "input": "not-a-hash",
+      "feedback": "格式不对：需要 64 位校验值，也可以粘贴终端输出的整行结果。"
+    },
+    {
+      "input": "0000000000000000000000000000000000000000000000000000000000000000",
+      "feedback": "校验值不一致。先不要打开这个 ZIP，请重新下载上面的备用包再核对。"
+    },
+    {
+      "input": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a  wrong.zip",
+      "feedback": "校验值相同，但文件名不是当前 ZIP。请确认核对的是上面的安装包。"
+    },
+    {
+      "input": "e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a  Chengsheng-0.0.7-arm64.zip",
+      "feedback": "一致，ZIP 文件校验通过。仍需在 Apple 芯片的 Mac 上安装。"
+    }
+  ],
+  "#copy-command": {
+    "feedback": "自动复制不可用。请手动复制已选中的内容：shasum -a 256 ~/Downloads/Chengsheng-0.0.7-arm64.zip",
+    "top": 681.765625
+  },
+  "#copy-checksum": {
+    "feedback": "自动复制不可用。请手动复制已选中的内容：e7f00735704ab03520f75cc772238afeacc7c1dc770148318716f86f18413b1a",
+    "top": 336.703125
+  },
+  "viewport390": {
+    "client": 390,
+    "scroll": 390,
+    "heading": "让你的书稿，\n一句句成声。",
+    "platform": false,
+    "buttons": [
+      {
+        "id": "button button-small button-ink",
+        "height": 44,
+        "font": "13px"
+      },
+      {
+        "id": "edit-demo",
+        "height": 44,
+        "font": "13px"
+      },
+      {
+        "id": "render-demo",
+        "height": 44,
+        "font": "13px"
+      },
+      {
+        "id": "reset-demo",
+        "height": 44,
+        "font": "13px"
+      },
+      {
+        "id": "",
+        "height": 44,
+        "font": "14px"
+      },
+      {
+        "id": "copy-command",
+        "height": 44,
+        "font": "13px"
+      },
+      {
+        "id": "copy-checksum",
+        "height": 44,
+        "font": "13px"
+      }
+    ]
+  },
+  "long390": {
+    "value": "门还虚掩着，风吹动窗边的书页，雨后的院子很安静，她没有回头，只把桌上的茶轻轻推向他。",
+    "rows": 4,
+    "clientHeight": 118,
+    "scrollHeight": 118,
+    "clientWidth": 186,
+    "scrollWidth": 186,
+    "length": "42 / 56 字符",
+    "docWidth": 390
+  },
+  "menu390": {
+    "open": false,
+    "active": "<summary>浏览<svg class=\"icon icon-small\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></summary>"
+  },
+  "copyMobile390": {
+    "feedback": "自动复制不可用。请手动复制已选中的内容：https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+    "top": 497.3125,
+    "buttonTop": 444.3125,
+    "viewport": 844,
+    "selection": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+  },
+  "viewport320": {
+    "client": 320,
+    "scroll": 320,
+    "heading": "让你的书稿，\n一句句成声。",
+    "platform": false,
+    "buttons": [
+      {
+        "id": "button button-small button-ink",
+        "height": 44,
+        "font": "13px"
+      },
+      {
+        "id": "edit-demo",
+        "height": 44,
+        "font": "13px"
+      },
+      {
+        "id": "render-demo",
+        "height": 44,
+        "font": "13px"
+      },
+      {
+        "id": "reset-demo",
+        "height": 44,
+        "font": "13px"
+      },
+      {
+        "id": "",
+        "height": 44,
+        "font": "14px"
+      },
+      {
+        "id": "copy-command",
+        "height": 44,
+        "font": "13px"
+      },
+      {
+        "id": "copy-checksum",
+        "height": 44,
+        "font": "13px"
+      }
+    ]
+  },
+  "long320": {
+    "value": "门还虚掩着，风吹动窗边的书页，雨后的院子很安静，她没有回头，只把桌上的茶轻轻推向他。",
+    "rows": 7,
+    "clientHeight": 197,
+    "scrollHeight": 197,
+    "clientWidth": 127,
+    "scrollWidth": 127,
+    "length": "42 / 56 字符",
+    "docWidth": 320
+  },
+  "menu320": {
+    "open": false,
+    "active": "<summary>浏览<svg class=\"icon icon-small\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></summary>"
+  },
+  "copyMobile320": {
+    "feedback": "自动复制不可用。请手动复制已选中的内容：https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+    "top": 442.640625,
+    "buttonTop": 391.640625,
+    "viewport": 740,
+    "selection": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+  },
+  "viewport768": {
+    "client": 768,
+    "scroll": 768,
+    "heading": "让你的书稿，\n一句句成声。",
+    "platform": false,
+    "buttons": [
+      {
+        "id": "button button-small button-ink",
+        "height": 44,
+        "font": "13px"
+      },
+      {
+        "id": "edit-demo",
+        "height": 44,
+        "font": "13px"
+      },
+      {
+        "id": "render-demo",
+        "height": 44,
+        "font": "13px"
+      },
+      {
+        "id": "reset-demo",
+        "height": 44,
+        "font": "13px"
+      },
+      {
+        "id": "",
+        "height": 44,
+        "font": "14px"
+      },
+      {
+        "id": "copy-command",
+        "height": 44,
+        "font": "13px"
+      },
+      {
+        "id": "copy-checksum",
+        "height": 44,
+        "font": "13px"
+      }
+    ]
+  },
+  "feedFailure": {
+    "status": "没有读到版本清单，请检查网络后重试。 下载链接保留为 0.0.7，仍可使用。",
+    "retry": false,
+    "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg"
+  },
+  "noJS": {
+    "href": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.dmg",
+    "release": "0.0.7",
+    "controlsHidden": true,
+    "inputDisabled": true
+  }
+}

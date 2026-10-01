@@ -1,0 +1,434 @@
+{
+  "results": {
+    "screens": {
+      "mobile": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "height": 2953,
+        "downloadSection": false,
+        "faqCount": 4,
+        "table": {
+          "tag": "TABLE",
+          "role": "table",
+          "name": "四句校样示例",
+          "describedBy": "demo-label",
+          "columnHeaders": [
+            {
+              "text": "句",
+              "scope": "col",
+              "role": "columnheader"
+            },
+            {
+              "text": "角色",
+              "scope": "col",
+              "role": "columnheader"
+            },
+            {
+              "text": "校样文字",
+              "scope": "col",
+              "role": "columnheader"
+            },
+            {
+              "text": "状态",
+              "scope": "col",
+              "role": "columnheader"
+            }
+          ],
+          "rows": [
+            {
+              "rowRole": "row",
+              "header": "1",
+              "scope": "row",
+              "headerRole": "rowheader",
+              "cells": [
+                {
+                  "text": "旁白",
+                  "role": "cell"
+                },
+                {
+                  "text": "雨停了，屋檐还在滴水。",
+                  "role": "cell"
+                },
+                {
+                  "text": "已出声",
+                  "role": "cell"
+                }
+              ]
+            },
+            {
+              "rowRole": "row",
+              "header": "2",
+              "scope": "row",
+              "headerRole": "rowheader",
+              "cells": [
+                {
+                  "text": "阿禾",
+                  "role": "cell"
+                },
+                {
+                  "text": "我就知道，你会回来。",
+                  "role": "cell"
+                },
+                {
+                  "text": "已出声",
+                  "role": "cell"
+                }
+              ]
+            },
+            {
+              "rowRole": "row",
+              "header": "3",
+              "scope": "row",
+              "headerRole": "rowheader",
+              "cells": [
+                {
+                  "text": "旁白",
+                  "role": "cell"
+                },
+                {
+                  "text": "编辑第三句校样，最多 56 个字符\n5 / 56 字符",
+                  "role": "cell"
+                },
+                {
+                  "text": "已出声",
+                  "role": "cell"
+                }
+              ]
+            },
+            {
+              "rowRole": "row",
+              "header": "4",
+              "scope": "row",
+              "headerRole": "rowheader",
+              "cells": [
+                {
+                  "text": "阿禾",
+                  "role": "cell"
+                },
+                {
+                  "text": "那就进来，茶还温着。",
+                  "role": "cell"
+                },
+                {
+                  "text": "已出声",
+                  "role": "cell"
+                }
+              ]
+            }
+          ]
+        },
+        "statusHeader": {
+          "display": "block",
+          "clipPath": "none",
+          "ariaHidden": null
+        },
+        "input": {
+          "width": 184,
+          "describedBy": "demo-feedback demo-length demo-state"
+        },
+        "stateGridColumn": "auto",
+        "accessibilitySnapshot": "- table \"四句校样示例\":\n  - rowgroup:\n    - row \"句 角色 校样文字 状态\":\n      - columnheader \"句\"\n      - columnheader \"角色\"\n      - columnheader \"校样文字\"\n      - columnheader \"状态\"\n  - rowgroup:\n    - row \"1 旁白 雨停了，屋檐还在滴水。 已出声\":\n      - rowheader \"1\"\n      - cell \"旁白\"\n      - cell \"雨停了，屋檐还在滴水。\":\n        - paragraph: 雨停了，屋檐还在滴水。\n      - cell \"已出声\"\n    - row \"2 阿禾 我就知道，你会回来。 已出声\":\n      - rowheader \"2\"\n      - cell \"阿禾\"\n      - cell \"我就知道，你会回来。\":\n        - paragraph: 我就知道，你会回来。\n      - cell \"已出声\"\n    - row \"3 旁白 编辑第三句校样，最多 56 个字符 门没关严。 5 / 56 字符 已出声\":\n      - rowheader \"3\"\n      - cell \"旁白\"\n      - cell \"编辑第三句校样，最多 56 个字符 门没关严。 5 / 56 字符\":\n        - text: 编辑第三句校样，最多 56 个字符\n        - textbox \"编辑第三句校样，最多 56 个字符 5 / 56 字符\": 门没关严。\n        - text: 5 / 56 字符\n      - cell \"已出声\"\n    - row \"4 阿禾 那就进来，茶还温着。 已出声\":\n      - rowheader \"4\"\n      - cell \"阿禾\"\n      - cell \"那就进来，茶还温着。\":\n        - paragraph: 那就进来，茶还温着。\n      - cell \"已出声\"",
+        "pageErrors": []
+      },
+      "desktop": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "height": 2778,
+        "downloadSection": false,
+        "faqCount": 4,
+        "table": {
+          "tag": "TABLE",
+          "role": "table",
+          "name": "四句校样示例",
+          "describedBy": "demo-label",
+          "columnHeaders": [
+            {
+              "text": "句",
+              "scope": "col",
+              "role": "columnheader"
+            },
+            {
+              "text": "角色",
+              "scope": "col",
+              "role": "columnheader"
+            },
+            {
+              "text": "校样文字",
+              "scope": "col",
+              "role": "columnheader"
+            },
+            {
+              "text": "状态",
+              "scope": "col",
+              "role": "columnheader"
+            }
+          ],
+          "rows": [
+            {
+              "rowRole": "row",
+              "header": "1",
+              "scope": "row",
+              "headerRole": "rowheader",
+              "cells": [
+                {
+                  "text": "旁白",
+                  "role": "cell"
+                },
+                {
+                  "text": "雨停了，屋檐还在滴水。",
+                  "role": "cell"
+                },
+                {
+                  "text": "已出声",
+                  "role": "cell"
+                }
+              ]
+            },
+            {
+              "rowRole": "row",
+              "header": "2",
+              "scope": "row",
+              "headerRole": "rowheader",
+              "cells": [
+                {
+                  "text": "阿禾",
+                  "role": "cell"
+                },
+                {
+                  "text": "我就知道，你会回来。",
+                  "role": "cell"
+                },
+                {
+                  "text": "已出声",
+                  "role": "cell"
+                }
+              ]
+            },
+            {
+              "rowRole": "row",
+              "header": "3",
+              "scope": "row",
+              "headerRole": "rowheader",
+              "cells": [
+                {
+                  "text": "旁白",
+                  "role": "cell"
+                },
+                {
+                  "text": "编辑第三句校样，最多 56 个字符\n5 / 56 字符",
+                  "role": "cell"
+                },
+                {
+                  "text": "已出声",
+                  "role": "cell"
+                }
+              ]
+            },
+            {
+              "rowRole": "row",
+              "header": "4",
+              "scope": "row",
+              "headerRole": "rowheader",
+              "cells": [
+                {
+                  "text": "阿禾",
+                  "role": "cell"
+                },
+                {
+                  "text": "那就进来，茶还温着。",
+                  "role": "cell"
+                },
+                {
+                  "text": "已出声",
+                  "role": "cell"
+                }
+              ]
+            }
+          ]
+        },
+        "statusHeader": {
+          "display": "block",
+          "clipPath": "none",
+          "ariaHidden": null
+        },
+        "input": {
+          "width": 658,
+          "describedBy": "demo-feedback demo-length demo-state"
+        },
+        "stateGridColumn": "auto",
+        "accessibilitySnapshot": "- table \"四句校样示例\":\n  - rowgroup:\n    - row \"句 角色 校样文字 状态\":\n      - columnheader \"句\"\n      - columnheader \"角色\"\n      - columnheader \"校样文字\"\n      - columnheader \"状态\"\n  - rowgroup:\n    - row \"1 旁白 雨停了，屋檐还在滴水。 已出声\":\n      - rowheader \"1\"\n      - cell \"旁白\"\n      - cell \"雨停了，屋檐还在滴水。\":\n        - paragraph: 雨停了，屋檐还在滴水。\n      - cell \"已出声\"\n    - row \"2 阿禾 我就知道，你会回来。 已出声\":\n      - rowheader \"2\"\n      - cell \"阿禾\"\n      - cell \"我就知道，你会回来。\":\n        - paragraph: 我就知道，你会回来。\n      - cell \"已出声\"\n    - row \"3 旁白 编辑第三句校样，最多 56 个字符 门没关严。 5 / 56 字符 已出声\":\n      - rowheader \"3\"\n      - cell \"旁白\"\n      - cell \"编辑第三句校样，最多 56 个字符 门没关严。 5 / 56 字符\":\n        - text: 编辑第三句校样，最多 56 个字符\n        - textbox \"编辑第三句校样，最多 56 个字符 5 / 56 字符\": 门没关严。\n        - text: 5 / 56 字符\n      - cell \"已出声\"\n    - row \"4 阿禾 那就进来，茶还温着。 已出声\":\n      - rowheader \"4\"\n      - cell \"阿禾\"\n      - cell \"那就进来，茶还温着。\":\n        - paragraph: 那就进来，茶还温着。\n      - cell \"已出声\"",
+        "normalDemo": {
+          "changed": "已改",
+          "complete": "已出声",
+          "feedback": "第 3 句返修演示完成，其余句子未变。",
+          "resetValue": "门没关严。"
+        },
+        "pageErrors": []
+      },
+      "narrow": {
+        "viewport": 320,
+        "documentWidth": 320,
+        "height": 3202,
+        "downloadSection": false,
+        "faqCount": 4,
+        "table": {
+          "tag": "TABLE",
+          "role": "table",
+          "name": "四句校样示例",
+          "describedBy": "demo-label",
+          "columnHeaders": [
+            {
+              "text": "句",
+              "scope": "col",
+              "role": "columnheader"
+            },
+            {
+              "text": "角色",
+              "scope": "col",
+              "role": "columnheader"
+            },
+            {
+              "text": "校样文字",
+              "scope": "col",
+              "role": "columnheader"
+            },
+            {
+              "text": "状态",
+              "scope": "col",
+              "role": "columnheader"
+            }
+          ],
+          "rows": [
+            {
+              "rowRole": "row",
+              "header": "1",
+              "scope": "row",
+              "headerRole": "rowheader",
+              "cells": [
+                {
+                  "text": "旁白",
+                  "role": "cell"
+                },
+                {
+                  "text": "雨停了，屋檐还在滴水。",
+                  "role": "cell"
+                },
+                {
+                  "text": "已出声",
+                  "role": "cell"
+                }
+              ]
+            },
+            {
+              "rowRole": "row",
+              "header": "2",
+              "scope": "row",
+              "headerRole": "rowheader",
+              "cells": [
+                {
+                  "text": "阿禾",
+                  "role": "cell"
+                },
+                {
+                  "text": "我就知道，你会回来。",
+                  "role": "cell"
+                },
+                {
+                  "text": "已出声",
+                  "role": "cell"
+                }
+              ]
+            },
+            {
+              "rowRole": "row",
+              "header": "3",
+              "scope": "row",
+              "headerRole": "rowheader",
+              "cells": [
+                {
+                  "text": "旁白",
+                  "role": "cell"
+                },
+                {
+                  "text": "编辑第三句校样，最多 56 个字符\n5 / 56 字符",
+                  "role": "cell"
+                },
+                {
+                  "text": "已出声",
+                  "role": "cell"
+                }
+              ]
+            },
+            {
+              "rowRole": "row",
+              "header": "4",
+              "scope": "row",
+              "headerRole": "rowheader",
+              "cells": [
+                {
+                  "text": "阿禾",
+                  "role": "cell"
+                },
+                {
+                  "text": "那就进来，茶还温着。",
+                  "role": "cell"
+                },
+                {
+                  "text": "已出声",
+                  "role": "cell"
+                }
+              ]
+            }
+          ]
+        },
+        "statusHeader": {
+          "display": "block",
+          "clipPath": "inset(50%)",
+          "ariaHidden": null
+        },
+        "input": {
+          "width": 188,
+          "describedBy": "demo-feedback demo-length demo-state"
+        },
+        "stateGridColumn": "3",
+        "accessibilitySnapshot": "- table \"四句校样示例\":\n  - rowgroup:\n    - row \"句 角色 校样文字 状态\":\n      - columnheader \"句\"\n      - columnheader \"角色\"\n      - columnheader \"校样文字\"\n      - columnheader \"状态\"\n  - rowgroup:\n    - row \"1 旁白 雨停了，屋檐还在滴水。 已出声\":\n      - rowheader \"1\"\n      - cell \"旁白\"\n      - cell \"雨停了，屋檐还在滴水。\":\n        - paragraph: 雨停了，屋檐还在滴水。\n      - cell \"已出声\"\n    - row \"2 阿禾 我就知道，你会回来。 已出声\":\n      - rowheader \"2\"\n      - cell \"阿禾\"\n      - cell \"我就知道，你会回来。\":\n        - paragraph: 我就知道，你会回来。\n      - cell \"已出声\"\n    - row \"3 旁白 编辑第三句校样，最多 56 个字符 门没关严。 5 / 56 字符 已出声\":\n      - rowheader \"3\"\n      - cell \"旁白\"\n      - cell \"编辑第三句校样，最多 56 个字符 门没关严。 5 / 56 字符\":\n        - text: 编辑第三句校样，最多 56 个字符\n        - textbox \"编辑第三句校样，最多 56 个字符 5 / 56 字符\": 门没关严。\n        - text: 5 / 56 字符\n      - cell \"已出声\"\n    - row \"4 阿禾 那就进来，茶还温着。 已出声\":\n      - rowheader \"4\"\n      - cell \"阿禾\"\n      - cell \"那就进来，茶还温着。\":\n        - paragraph: 那就进来，茶还温着。\n      - cell \"已出声\"",
+        "pageErrors": []
+      }
+    },
+    "race": {
+      "0.0.7": {
+        "initial": "正在检查新版，当前安装包可下载。",
+        "during": {
+          "hero": "正在检查新版，当前安装包可下载。",
+          "footer": "已打开 ZIP 下载链接。进度请查看浏览器下载列表。"
+        },
+        "after": {
+          "hero": "",
+          "footer": "已打开 ZIP 下载链接。进度请查看浏览器下载列表。",
+          "footerRole": "status",
+          "link": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.7/Chengsheng-0.0.7-arm64.zip",
+          "version": "0.0.7"
+        }
+      },
+      "0.0.8": {
+        "initial": "正在检查新版，当前安装包可下载。",
+        "during": {
+          "hero": "正在检查新版，当前安装包可下载。",
+          "footer": "已打开 ZIP 下载链接。进度请查看浏览器下载列表。"
+        },
+        "after": {
+          "hero": "",
+          "footer": "下载链接已更新为 v0.0.8。你刚才打开的是 v0.0.7，可重新下载。",
+          "footerRole": "status",
+          "link": "https://github.com/Ysheep666/chengsheng-site/releases/download/app-v0.0.8/Chengsheng-0.0.8-arm64.zip",
+          "version": "0.0.8"
+        }
+      }
+    }
+  },
+  "files": [
+    "a-round3-desktop-full.png",
+    "a-round3-mobile-full.png",
+    "a-round3-narrow-demo.png"
+  ]
+}
