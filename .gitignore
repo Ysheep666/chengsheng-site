@@ -1,3 +1,22 @@
+# macOS metadata
 .DS_Store
-downloads/*.zip
-downloads/*.dmg
+
+# Local design reviews and workspace state
+/.impeccable/
+/.pier/
+
+# Tool-injected system skill links
+/.agents/skills/pier-*
+/.claude/skills/pier-*
+
+# Local secrets and editor temporary files
+.env
+.env.*
+!.env.example
+*.swp
+*.swo
+*~
+
+# Installers belong in GitHub Releases
+/downloads/*.zip
+/downloads/*.dmg

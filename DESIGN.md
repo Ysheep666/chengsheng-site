@@ -158,7 +158,7 @@ components:
 
 工具窗保留接近本机应用的圆角、标题栏和章节侧栏。页面说明区主要依靠留白、底色和细分隔线组织层次，校样窗用一处柔和投影突出可操作的示例。控件紧凑，关键操作仍有明确的点击面积和键盘焦点。
 
-描述性来源沿用 PRODUCT.md 的品牌承诺与产品定位，以及 .impeccable/surfaces/index-html.md 已确认的方向；本次刷新保留这一视觉世界。数值来源为当前 site.css，结构与交互来源为 index.html、site.js 和 404.html。字体出处见 assets/fonts/SOURCE.txt。本轮独立浏览器审查截图由主代理查看并归档，证据路径为 .impeccable/review/copy-round3/desktop.png 与 .impeccable/review/copy-round3/mobile.png；此文档提取不包含独立浏览器测试或评审结论。
+品牌承诺与产品定位见 `PRODUCT.md`。设计数值来源为 `site.css`，结构与交互来源为 `index.html`、`site.js` 和 `404.html`。字体出处与许可保留在 `assets/fonts/`。
 
 **Key Characteristics:**
 
